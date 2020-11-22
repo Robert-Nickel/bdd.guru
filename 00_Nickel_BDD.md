@@ -11,14 +11,14 @@ csl: chicago-author-date.csl
 ---
 
 ## Table of Contents <!-- omit in toc -->
-- [01 - Introduction](#01---introduction)
-- [02 - Why Behavior-driven development?](#02---why-behavior-driven-development)
-- [03 - The Principles of Behavior-driven development](#03---the-principles-of-behavior-driven-development)
-- [04 - The Tools of Behavior-driven development](#04---the-tools-of-behavior-driven-development)
-- [05 - Advantages of Behavior-driven development](#05---advantages-of-behavior-driven-development)
-- [06 - Conclusion](#06---conclusion)
+1. [Introduction](#introduction)
+2. [Why Behavior-driven development?](#why-behavior-driven-development)
+3. [The Principles of Behavior-driven development](#the-principles-of-behavior-driven-development)
+4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
+5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
+6. [Conclusion](#conclusion)
 
-## 01 - Introduction
+## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
 
 1. Misunderstandings in inter-human communication
@@ -35,13 +35,28 @@ The fundamental idea of BDD is to focus on the behavior of a software system whi
 
 In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.
 
-## 02 - Why Behavior-driven development?
+## Why Behavior-driven development?
 Quantify the industries interest in behavior-driven development (BDD)
-- State of agile report for numbers
-- Search engine statistics
-- other?
 
-## 03 - The Principles of Behavior-driven development
+Year | Version | Employment | listed as
+:-: | :-: | :-: | :-:
+2007 | 2 | None | None
+2008 | 3rd | 7% | agile method
+2009 | 4th | None | agile technique
+2010 | 5th | 9% | agile technique
+2011 | 6th | 9% | agile technique
+2012 | 7th | 10% | agile technique
+2013 | 8th | 12% | agile technique
+2014 | 9th | 9% | agile technique
+2015 | 10th | 10% | agile technique
+2016 | 11th | 16% | engineering practice
+2017 | 12th | 17% | engineering practice
+2018 | 13th | 22% | engineering practice
+2019 | 14th | 19% | engineering practice
+
+Search engine statistics?
+
+## The Principles of Behavior-driven development
 - To what extent is BDD an advancement to test-driven development (TDD)?
   - TDD as origin
   - Differences & Similarities
@@ -63,12 +78,12 @@ Quantify the industries interest in behavior-driven development (BDD)
   - Dev team is invited to participate in business discussions.
   - What about responsibility segregation?
 
-## 04 - The Tools of Behavior-driven development
+## The Tools of Behavior-driven development
 - Name a few examples like JBehave and/or Cucumber
 - what do the tools do?
 - importance of tools
  
-## 05 - Advantages of Behavior-driven development
+## Advantages of Behavior-driven development
 - motivation
   - Does devteam win by invitation to business participation?
   - Does a deeper (than a scrum user story) understanding of the business questions increase the dev team's motivation?
@@ -85,7 +100,7 @@ Quantify the industries interest in behavior-driven development (BDD)
 - documentation
   - Executable specification as living documentation
 
-## 06 - Conclusion
+## Conclusion
 - Qualitative
   - limitations
   - possibility (Useful aspects of BDD)
