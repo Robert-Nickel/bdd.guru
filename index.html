@@ -200,7 +200,7 @@
 <p>In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.</p>
 <h2 id="why-behavior-driven-development">Why Behavior-driven development?</h2>
 <p>Quantify the industries interest in BDD</p>
-<p>The State of Agile Report<span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Homepage,”</span> n.d.)</span> is a annually executed survey that started 2007 and since then provides insights into the application of agile methodologies and practices over a large range of different companies worldwide. For the 14th State of Agile Report 1121 surveys were collected <span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Homepage,”</span> n.d., 5)</span> whereas for the Report from 2015 3880 surveys where collected<span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Homepage,”</span> n.d., 2)</span>. The survey tries to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the application of BDD, at least among the companies that participated in the survey. Here is a table of BDD mentionings by year, that states the application of BDD among the participants in percent. BDD is listed under different captions: In the earlier surveys it was an agile method, then it became an agile technique and sind 2016 it is listed as engineering practice.</p>
+<p>The State of Agile Report<span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Reports Homepage,”</span> n.d.)</span> is a annually executed survey that started 2007 and since then provides insights into the application of agile methodologies and practices over a large range of different companies worldwide. For the 14th State of Agile Report 1121 surveys were collected <span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Reports Homepage,”</span> n.d., 5)</span> whereas for the Report from 2015 3880 surveys where collected<span class="citation" data-cites="stateOfAgile">(<span>“State of Agile Reports Homepage,”</span> n.d., 2)</span>. The survey tries to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the application of BDD, at least among the companies that participated in the survey. Here is a table of BDD mentionings by year, that states the application of BDD among the participants in percent. BDD is listed under different captions: In the earlier surveys it was an agile method, then it became an agile technique and sind 2016 it is listed as engineering practice.</p>
 <table>
 <thead>
 <tr class="header">
@@ -208,6 +208,7 @@
 <th style="text-align: center;">Version</th>
 <th style="text-align: center;">BDD used by</th>
 <th style="text-align: center;">listed as</th>
+<th style="text-align: left;"></th>
 </tr>
 </thead>
 <tbody>
@@ -215,73 +216,85 @@
 <td style="text-align: center;">2008</td>
 <td style="text-align: center;">3rd</td>
 <td style="text-align: center;">7%</td>
-<td style="text-align: center;">agile method<span class="citation" data-cites="stateOfAgile3">(<span>“State of Agile Homepage 3rd Report”</span> 2009)</span></td>
+<td style="text-align: center;">agile method</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile3">(<span>“State of Agile 3rd Report”</span> 2009)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2009</td>
 <td style="text-align: center;">4th</td>
 <td style="text-align: center;">None</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile4">(<span>“State of Agile Homepage 4th Report”</span> 2010)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile4">(<span>“State of Agile 4th Report”</span> 2010)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2010</td>
 <td style="text-align: center;">5th</td>
 <td style="text-align: center;">9%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile5">(<span>“State of Agile Homepage 5th Report”</span> 2011)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile5">(<span>“State of Agile 5th Report”</span> 2011)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2011</td>
 <td style="text-align: center;">6th</td>
 <td style="text-align: center;">9%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile6">(<span>“State of Agile Homepage 6th Report”</span> 2012)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile6">(<span>“State of Agile 6th Report”</span> 2012)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2012</td>
 <td style="text-align: center;">7th</td>
 <td style="text-align: center;">10%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile7">(<span>“State of Agile Homepage 7th Report”</span> 2013)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile7">(<span>“State of Agile 7th Report”</span> 2013)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2013</td>
 <td style="text-align: center;">8th</td>
 <td style="text-align: center;">12%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile8">(<span>“State of Agile Homepage 8th Report”</span> 2014)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile8">(<span>“State of Agile 8th Report”</span> 2014)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2014</td>
 <td style="text-align: center;">9th</td>
 <td style="text-align: center;">9%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile9">(<span>“State of Agile Homepage 9th Report”</span> 2015)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile9">(<span>“State of Agile 9th Report”</span> 2015)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2015</td>
 <td style="text-align: center;">10th</td>
 <td style="text-align: center;">10%</td>
-<td style="text-align: center;">agile technique<span class="citation" data-cites="stateOfAgile10">(<span>“State of Agile Homepage 10th Report”</span> 2016)</span></td>
+<td style="text-align: center;">agile technique</td>
+<td style="text-align: left;"> <span class="citation" data-cites="stateOfAgile10">(<span>“State of Agile 10th Report”</span> 2016)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2016</td>
 <td style="text-align: center;">11th</td>
 <td style="text-align: center;">16%</td>
-<td style="text-align: center;">engineering practice<span class="citation" data-cites="stateOfAgile11">(<span>“State of Agile Homepage 11th Report”</span> 2017)</span></td>
+<td style="text-align: center;">engineering practice</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile11">(<span>“State of Agile 11th Report”</span> 2017)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2017</td>
 <td style="text-align: center;">12th</td>
 <td style="text-align: center;">17%</td>
-<td style="text-align: center;">engineering practice<span class="citation" data-cites="stateOfAgile12">(<span>“State of Agile Homepage 12th Report”</span> 2018)</span></td>
+<td style="text-align: center;">engineering practice</td>
+<td style="text-align: left;"> <span class="citation" data-cites="stateOfAgile12">(<span>“State of Agile 12th Report”</span> 2018)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">2018</td>
 <td style="text-align: center;">13th</td>
 <td style="text-align: center;">22%</td>
-<td style="text-align: center;">engineering practice<span class="citation" data-cites="stateOfAgile13">(<span>“State of Agile Homepage 13th Report”</span> 2019)</span></td>
+<td style="text-align: center;">engineering practice</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile13">(<span>“State of Agile 13th Report”</span> 2019)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2019</td>
 <td style="text-align: center;">14th</td>
 <td style="text-align: center;">19%</td>
-<td style="text-align: center;">engineering practice<span class="citation" data-cites="stateOfAgile14">(<span>“State of Agile Homepage 14th Report”</span> 2020)</span></td>
+<td style="text-align: center;">engineering practice</td>
+<td style="text-align: left;"><span class="citation" data-cites="stateOfAgile14">(<span>“State of Agile 14th Report”</span> 2020)</span></td>
 </tr>
 </tbody>
 </table>
@@ -379,44 +392,44 @@
 <div id="ref-nagy2018discovery" class="csl-entry" role="doc-biblioentry">
 Nagy, G., and S. Rose. 2018. <em>Discovery: Explore Behaviour Using Examples</em>. BDD Books. CreateSpace Independent Publishing Platform. <a href="https://books.google.ca/books?id=FwLGswEACAAJ">https://books.google.ca/books?id=FwLGswEACAAJ</a>.
 </div>
-<div id="ref-stateOfAgile" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage.”</span> n.d. <a href="https://stateofagile.com/">https://stateofagile.com/</a>.
-</div>
 <div id="ref-stateOfAgile10" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 10th Report.”</span> 2016. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554198-10th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554198-10th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 10th Report.”</span> 2016. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554198-10th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554198-10th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile11" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 11th Report.”</span> 2017. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554036-11th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554036-11th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 11th Report.”</span> 2017. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554036-11th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554036-11th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile12" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 12th Report.”</span> 2018. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613553652-12th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613553652-12th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 12th Report.”</span> 2018. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613553652-12th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613553652-12th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile13" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 13th Report.”</span> 2019. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613553418-13th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613553418-13th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 13th Report.”</span> 2019. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613553418-13th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613553418-13th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile14" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 14th Report.”</span> 2020. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-615706098-14th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-615706098-14th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 14th Report.”</span> 2020. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-615706098-14th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-615706098-14th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile3" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 3rd Report.”</span> 2009. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555659-3rd-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555659-3rd-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 3rd Report.”</span> 2009. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555659-3rd-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555659-3rd-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile4" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 4th Report.”</span> 2010. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555629-4th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555629-4th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 4th Report.”</span> 2010. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555629-4th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555629-4th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile5" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 5th Report.”</span> 2011. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555476-5th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555476-5th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 5th Report.”</span> 2011. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555476-5th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555476-5th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile6" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 6th Report.”</span> 2012. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555398-6th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555398-6th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 6th Report.”</span> 2012. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555398-6th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555398-6th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile7" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 7th Report.”</span> 2013. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555113-7th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555113-7th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 7th Report.”</span> 2013. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613555113-7th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613555113-7th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile8" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 8th Report.”</span> 2014. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554825-8th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554825-8th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 8th Report.”</span> 2014. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554825-8th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554825-8th-annual-state-of-agile-report/7027494</a>.
 </div>
 <div id="ref-stateOfAgile9" class="csl-entry" role="doc-biblioentry">
-<span>“State of Agile Homepage 9th Report.”</span> 2015. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554519-9th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554519-9th-annual-state-of-agile-report/7027494</a>.
+<span>“State of Agile 9th Report.”</span> 2015. VersionOne Inc. / Digital.ai Software Inc. <a href="https://stateofagile.com/#ufh-i-613554519-9th-annual-state-of-agile-report/7027494">https://stateofagile.com/#ufh-i-613554519-9th-annual-state-of-agile-report/7027494</a>.
+</div>
+<div id="ref-stateOfAgile" class="csl-entry" role="doc-biblioentry">
+<span>“State of Agile Reports Homepage.”</span> n.d. <a href="https://stateofagile.com/">https://stateofagile.com/</a>.
 </div>
 </div>
 </body>

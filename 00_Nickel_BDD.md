@@ -42,19 +42,19 @@ The State of Agile Report[@stateOfAgile] is a annually executed survey that star
 For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile, p.5] whereas for the Report from 2015 3880 surveys where collected[@stateOfAgile, p.2]. The survey tries to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the application of BDD, at least among the companies that participated in the survey. Here is a table of BDD mentionings by year, that states the application of BDD among the participants in percent. BDD is listed under different captions: In the earlier surveys it was an agile method, then it became an agile technique and sind 2016 it is listed as engineering practice.
 
 Year | Version | BDD used by | listed as
-:-: | :-: | :-: | :-:
-2008 | 3rd | 7% | agile method[@stateOfAgile3]
-2009 | 4th | None | agile technique[@stateOfAgile4]
-2010 | 5th | 9% | agile technique[@stateOfAgile5]
-2011 | 6th | 9% | agile technique[@stateOfAgile6]
-2012 | 7th | 10% | agile technique[@stateOfAgile7]
-2013 | 8th | 12% | agile technique[@stateOfAgile8]
-2014 | 9th | 9% | agile technique[@stateOfAgile9]
-2015 | 10th | 10% | agile technique[@stateOfAgile10]
-2016 | 11th | 16% | engineering practice[@stateOfAgile11]
-2017 | 12th | 17% | engineering practice[@stateOfAgile12]
-2018 | 13th | 22% | engineering practice[@stateOfAgile13]
-2019 | 14th | 19% | engineering practice[@stateOfAgile14]
+:-: | :-: | :-: | :-: | :-
+2008 | 3rd | 7% | agile method | [@stateOfAgile3]
+2009 | 4th | None | agile technique | [@stateOfAgile4]
+2010 | 5th | 9% | agile technique | [@stateOfAgile5]
+2011 | 6th | 9% | agile technique | [@stateOfAgile6]
+2012 | 7th | 10% | agile technique | [@stateOfAgile7]
+2013 | 8th | 12% | agile technique | [@stateOfAgile8]
+2014 | 9th | 9% | agile technique | [@stateOfAgile9]
+2015 | 10th | 10% | agile technique | [@stateOfAgile10]
+2016 | 11th | 16% | engineering practice | [@stateOfAgile11]
+2017 | 12th | 17% | engineering practice | [@stateOfAgile12]
+2018 | 13th | 22% | engineering practice | [@stateOfAgile13]
+2019 | 14th | 19% | engineering practice | [@stateOfAgile14]
 
 Search engine statistics?
 
