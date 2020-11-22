@@ -42,7 +42,7 @@ The State of Agile Report[@stateOfAgile] is a annually executed survey that star
 For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile, p.5] whereas for the Report from 2015 3880 surveys where collected[@stateOfAgile, p.2]. The survey tries to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the application of BDD, at least among the companies that participated in the survey. Here is a table of BDD mentionings by year, that states the application of BDD among the participants in percent. BDD is listed under different captions: In the earlier surveys it was an agile method, then it became an agile technique and sind 2016 it is listed as engineering practice.
 
 Report | BDD used by | BDD listed as
--: | :-: | :-
+:-: | :-: | :-:
 [@stateOfAgile3] | 7% | agile method
 [@stateOfAgile4] | None | agile technique
 [@stateOfAgile5] | 9% | agile technique
