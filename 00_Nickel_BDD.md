@@ -38,8 +38,8 @@ In this essay I want to elaborate on how BDD leverages this idea into building s
 ## Why Behavior-driven development?
 Quantify the industries interest in BDD
 
-The State of Agile Report[@stateOfAgile] is a annually executed survey that started 2007 and since then provides insights into the application of agile methodologies and practices over a large range of different companies worldwide.
-For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile, p.5] whereas for the Report from 2015 3880 surveys where collected[@stateOfAgile, p.2]. The survey tries to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the application of BDD, at least among the companies that participated in the survey. Here is a table of BDD mentionings by year, that states the application of BDD among the participants in percent. BDD is listed under different captions: In the earlier surveys it was an agile method, then it became an agile technique and sind 2016 it is listed as engineering practice.
+The annual "State of Agile" Report started 2007 and provides since then insights into the application of agile methodologies and practices over a large range of different companies worldwide.
+For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile14, p.5] and for the Report from 2015 even 3880 surveys where collected[@stateOfAgile10, p.2]. The survey is handed out to agile practicioners and executives. It is aimed to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the employment of BDD, at least among the companies that participated in the survey. This table of percental BDD employment per year shows a significantly growing application of BDD, especially since 2015 BDD appears to gain relevance each year except 2019.
 
 Report | BDD used by | BDD listed as
 :-: | :-: | :-:
@@ -55,6 +55,8 @@ Report | BDD used by | BDD listed as
 [@stateOfAgile12] | 17% | engineering practice
 [@stateOfAgile13] | 22% | engineering practice
 [@stateOfAgile14] | 19% | engineering practice
+
+BDD is listed under different captions: In the earlier surveys it was listed as an agile method, then it was listed as an agile technique and since 2016 it is listed as engineering practice.
 
 Search engine statistics?
 
