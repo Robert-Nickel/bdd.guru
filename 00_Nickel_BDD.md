@@ -17,6 +17,7 @@ csl: chicago-author-date.csl
 4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
 5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
 6. [Conclusion](#conclusion)
+7. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -123,4 +124,4 @@ This graphic visualizes the interest in BDD as topic over time relative to the p
 - Does BDD work?
 - Should everyone do BDD?
 
----
+## References
