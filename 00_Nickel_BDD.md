@@ -58,7 +58,11 @@ Report | BDD used by | BDD listed as
 
 BDD is listed under different captions: In the earlier surveys it was listed as an agile method, then it was listed as an agile technique and since 2016 it is listed as engineering practice.
 
-Search engine statistics?
+Another approach understand the interest in BDD is to have a look at Google Trends:
+![](images/google_trends_bdd_topic.png)
+[@googleTrendsBddTopic]
+
+This graphic visualizes the interest in BDD as topic over time relative to the past highest interest, in this case in December 2004, for Google web searches. The graphic displays some high interest from late 2004 until mid 2007, a peak in mid 2010 and since then a relative interest of around 30% until the present day. This appears odd and does not match the state of agile reports intuitively, assuming that people in the software industry use the Google web search to search for applied practices. One possible explanation is, that people in the software industry might be early adopters of alternatives to the Google web search.
 
 ## The Principles of Behavior-driven development
 - To what extent is BDD an advancement to test-driven development (TDD)?

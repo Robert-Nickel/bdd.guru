@@ -8,6 +8,7 @@ numbersections: true
 listings: true
 bibliography: [bibliography.bib]
 csl: chicago-author-date.csl
+documentclass: scrreprt
 ---
 
 ## Introduction
