@@ -17,6 +17,8 @@ csl: chicago-author-date.csl
 3. [The Principles of Behavior-driven development](#the-principles-of-behavior-driven-development)
    1. [From TDD to BDD](#from-tdd-to-bdd)
    2. [Examples and Business Rules](#examples-and-business-rules)
+   3. [Scenarios](#scenarios)
+   4. [Formulation](#formulation)
 4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
 5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
 6. [Conclusion](#conclusion)
@@ -92,8 +94,14 @@ Examples consist of a context, an action and an outcome. The context is the stat
 
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
----
+### Scenarios
 
+
+### Formulation
+Formulation: Example -> Scenario
+
+---
+- Meetings in BDD
 - Which goals are defined?
 - Which areas are affected by BDD?
   - The role of examples
