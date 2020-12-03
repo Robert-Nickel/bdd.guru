@@ -15,11 +15,12 @@ csl: chicago-author-date.csl
 1. [Introduction](#introduction)
 2. [Why Behavior-driven development?](#why-behavior-driven-development)
 3. [The Principles of Behavior-driven development](#the-principles-of-behavior-driven-development)
-4. [From TDD to BDD](#from-tdd-to-bdd)
-5. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
-6. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
-7. [Conclusion](#conclusion)
-8. [References](#references)
+   1. [From TDD to BDD](#from-tdd-to-bdd)
+   2. [Examples and Business Rules](#examples-and-business-rules)
+4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
+5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
+6. [Conclusion](#conclusion)
+7. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -67,26 +68,40 @@ This graphic visualizes the interest in BDD as topic over time relative to the p
 ## The Principles of Behavior-driven development
 The term behavior-driven development, as it was introduced by Dan North in 2006[@north2006introducing-bdd], explicitly avoided the term "test" in order to keep business people engaged.[nagy2018discovery, p.10] This is a strong hint towards the most fundamental principle of BDD: bringing the specification and the quality assurance together or in other terms: "Bridging the Communication Gap", which is the title of the book by Gojko Adzic[@Adzic2009Bridging] that describes a very similar idea which he names "specification by example" and "agile acceptance testing".
 
-## From TDD to BDD
+### From TDD to BDD
 Dan North describes in "Introducing BDD" how BDD is his response to TDD. In order to get a deeper understanding of what that means, we must have a closer look at TDD. TDD is a narrower approach, in which only technically focussed people are involved. The idea is to write a test that describes a feature which doesn't exist yet, ensure it fails, and then implement that feature until the test does not fail anymore. After the new test is executed successfully and none of the existing tests is broken, the developer can move on to the next test for the next feature. This test-first approach is mentioned in the early publications about Extreme Programming[@Lindstrom2004ExtremePA].
 
-According to the agile alliance glossary[@agileAllianceTDD], common pitfalls of a TDD using team are a "poor maintenance of the test suite – most commonly leading to a test suite with a prohibitively long running time" which sometimes leads to a "abandoned test suite (i.e. seldom or never run)[...]". Dan North explains some further pitfalls, that range from the naming of the tests, which might cause some "false sense of security"[@north2006introducing-bdd], to the scope and the actual functionality that needs to be tested. Thinking in terms of behavior solved these issues: The naming of an executable test is based on the behavior it should assure. The scope of the test is easier defined on the level of behavior (rather on the more technical level of test), because a behavior describing sentence has naturally a certain length and a functional scope that excludes all technical details. The question, which features should be tested, also became easier to answer: All of the behavior, that the software should have, needs to be tested. Lower level tests, which ensure the software uses a specific solution, step back in order to focus on the behavior itself, which correlates to the original intent of writing the software.
+According to the agile alliance glossary[@agileAllianceTDD], common pitfalls of a TDD using team are a "poor maintenance of the test suite – most commonly leading to a test suite with a prohibitively long running time" which sometimes leads to a "abandoned test suite (i.e. seldom or never run)[...]". Dan North explains some further pitfalls, that range from the naming of the tests, which might cause some "false sense of security"[@north2006introducing-bdd], to the scope and the actual functionality that needs to be tested. Thinking in terms of behavior solved these issues: The naming of an executable test is based on the behavior it should assure. The scope of the test is easier defined on the level of behavior (rather on the more technical level of test), because a behavior description has naturally a certain length and a functional scope that excludes all technical details. The question, which features should be tested, also became easier to answer: All of the behavior, that the software should have, needs to be tested. Lower level tests, which ensure the software uses a specific solution, step back and the testing scope shifts towards tests that describe the behavior of a system. Latter correlate to the original intent of writing the software and therefore are getting closer to stakeholders attention. Concluding this chapter: BDD is a successor of TDD in its nature, but shifts its scope towards a more behavioral and less technical level. At the same time, TDD can be used inside of BDD, so that both layers are addressed at the same time[@nagy2018discovery, p. 15].
 
+### Examples and Business Rules
+Examples are a mighty tool in BDD, which are used to illustrate business rules and therefore reduce the chance of misinterpreting them[@nagy2018discovery, p. 48].
 
-- To what extent is BDD an advancement to test-driven development (TDD)?
-  - TDD as origin
-  - Differences & Similarities
-  - Does BDD contain or extend TDD?
-  - Do they solve the same problem?
-  - Does the testing scope shift (Unit -> Acceptance tests)?
+Examples consist of a context, an action and an outcome. The context is the state of the system before the action is applied to it. The action is the stimulus that causes the system to react. It might be another system, some scheduled action or the user of the system. The outcome is the updated state of the system after the action has taken place[@nagy2018discovery, p. 43]. It should focus on that part of the system that was influenced by the action, and does not need to contain irrelevant aspects. Moreover, an example always contains concrete data in contrast to variables. An example is what can be used to write a test for a system. One example of an example from the world of poker:
+
+    - Table is preflop
+    - Amy is on the button
+    - Amy has a stack of 50BB
+    - Bob is small blind
+    - Carl is big blind
+    - Amy has aces
+    - Bob and Carl post the blinds
+    * Amy raises 3BB  
+    => Raise is accepted
+
+*Here, the dashes stand for the context, the asterisk for the action and the bold arrow for the outcome.*
+
+The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
+
+---
+
 - Which goals are defined?
 - Which areas are affected by BDD?
+  - The role of examples
   - Specification - a contract?
     - Context(Given) Event(When) Outcomes(Then)
     - becomes executable
     - Scenarios
     - Gherkin language
-    - by example (which enables making it executable) not in general
   - Quality Assurance
   - Development
   - Documentation
