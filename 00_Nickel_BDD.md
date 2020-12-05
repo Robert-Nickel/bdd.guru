@@ -97,13 +97,13 @@ The examples alone cannot describe the behavior of a system sufficiently. Theref
 ### Scenarios
 TODO: What is a scenario? How is it different from an example? Executability etc.
 
-In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.
-- Business Language
-- Real Data
-- Intention Revealing
-- Essential
-- Focused
-- Brief (Which is the acronym itself.)
+In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
+- Business Language  
+- Real Data  
+- Intention Revealing  
+- Essential  
+- Focused  
+- Brief (Which is the acronym itself.)  
 
 Using the business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. Real data should be used for scenarios, just like for examples, to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on the intents of the actors of the system rather which mechanics lead to the expected result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the essential parts of a illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should only describe exactly one business rule. Therefore it is possible to describe a scenario in a brief way, which makes a scenario easier to understand and discuss.
   
