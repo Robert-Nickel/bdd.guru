@@ -167,7 +167,7 @@ Cucumber uses the Gherkin language and supports connecting specification stateme
 In this short example, the following step definition would match the action of creating a table with a certain amount of players and extract the amount of players as parameter, so that it can be reused for all different amounts of players (in the range of int).
 
     And("There are {int} players in the round") { numberOfPlayers: Int =>
-        Table(numberOfPlayers = numberOfPlayers, _etc._)
+        Table(numberOfPlayers = numberOfPlayers)
     }
 
 Depending on the application of the software system, step definitions can have all shapes and colors: They might be calling methods, find HTML elements in a browser, send a HTTP request, create objects and many more.

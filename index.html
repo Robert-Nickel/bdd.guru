@@ -362,7 +362,7 @@ Examples</code></pre>
 <pre><code>And there are 2 players in the round</code></pre>
 <p>In this short example, the following step definition would match the action of creating a table with a certain amount of players and extract the amount of players as parameter, so that it can be reused for all different amounts of players (in the range of int).</p>
 <pre><code>And(&quot;There are {int} players in the round&quot;) { numberOfPlayers: Int =&gt;
-    Table(numberOfPlayers = numberOfPlayers, _etc._)
+    Table(numberOfPlayers = numberOfPlayers)
 }</code></pre>
 <p>Depending on the application of the software system, step definitions can have all shapes and colors: They might be calling methods, find HTML elements in a browser, send a HTTP request, create objects and many more.</p>
 <p>TODO: How important are tools to apply BDD?</p>
