@@ -144,14 +144,14 @@ What about responsibility segregation?
 
 ### How to write good scenarios/examples
 Since scenarios are examples that are formalized by a business readable DSL, but are contentwise similar, they are considered synonym for the following section. In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
-- Business Language  
-- Real Data  
-- Intention Revealing  
-- Essential  
-- Focused  
-- Brief (Which is the acronym itself.)  
+1. Business Language  
+2. Real Data  
+3. Intention Revealing  
+4. Essential  
+5. Focused  
+6. Brief (Which is the acronym itself.)  
 
-Using the _business language_ in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. _Real data_ should be used for scenarios to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on _revealing the intent_ of the aspect of a system, rather than on the mechanics that lead to that result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the _essential_ parts of an illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should _focus_ on describing only one business rule. Therefore it is possible to describe a scenario in a _brief_ way, which makes a scenario easier to understand and discuss for people of all roles.
+Using the (1) business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. (2) Real data should be used for scenarios to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on (3) revealing the intent of the aspect of a system, rather than on the mechanics that lead to that result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the (4) essential parts of an illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should (5) focus on describing only one business rule. Therefore it is possible to describe a scenario in a (6) brief way, which makes a scenario easier to understand and discuss for people of all roles.
 
 ### Three amigos/ Specification workshop / Discovery workshop
 
