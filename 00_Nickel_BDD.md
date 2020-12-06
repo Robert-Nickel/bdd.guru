@@ -25,7 +25,8 @@ csl: chicago-author-date.csl
    2. [Three amigos/ Specification workshop / Discovery workshop](#three-amigos-specification-workshop--discovery-workshop)
    3. [The Tools of BDD](#the-tools-of-bdd)
 6. [Critical evaluation of BDD](#critical-evaluation-of-bdd)
-7. [References](#references)
+7. [BDD application maturity check](#bdd-application-maturity-check)
+8. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -92,7 +93,7 @@ Examples consist of a context, an action and an outcome. The context is the stat
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
 ### Scenarios, the Gherkin Language and working software
-A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)[@Fowler2008Business], for example the Gherkin language[@cucumberGherkinDocs] is used to describe behavioral descriptions of a software system. The Gherkin language has only very few (primary) keywords:
+A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)[@Fowler2008Business], for example the Gherkin language[@cucumberGherkinDocs], is used to describe behavioral descriptions of a software system. The Gherkin language has only very few (primary) keywords:
     
     Feature
     Rule (as of Gherkin 6)  
@@ -120,7 +121,7 @@ and even less secondary keywords used for comments, tags, data tables and doc st
           And one player is in the round
           Then the player will win the pot
 
-These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". It is by design that these keywords are close to the natural language for the for this reason: The Gherkin language is the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool) and at the same time readable and writable for non-technically focussed business people.
+These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". The Gherkin language exists for different natural languages (english, german, ...), and it is by design that the used keyword-structure is close to that of a natural language. The reason for that is the Gherkin language being the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool like Cucumber) and at the same time readable and writable for non-technically focussed business people.
 
 Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a (usually high-level) programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don'ts, I want to conclude this very key principle of BDD.
 
@@ -157,9 +158,21 @@ Using the (1) business language in scenarios aims to keep the business people en
 ### Three amigos/ Specification workshop / Discovery workshop
 
 ### The Tools of BDD
-- Name a few examples like JBehave, Cucumber and SpecFlow
-- what do the tools do?
-- importance of tools
+Although applying BDD does not require the usage of high-level tools such as Cucumber, SpecFlow, Behat, GoDog etc., it is common and useful to do that. A lot of those tools are based on Cucumber, a list of different implementations and their corresponding officiality can be found here on Cucumbers installation page[@cucumberInstallation]. For most common programming languages and platforms a Cucumber-based implementation exists.
+
+Cucumber uses the Gherkin language and supports connecting specification statements from a .feature file with the corresponding step definitions, which execute the actual code to trigger and assert a specific behavior. A step definition is the detailed mapping of how a statement in the .feature file (which is the specification) maps to functions and assertions in the actual software. Regular expressions are used to match the sentences and extract the parameters out of them.
+
+    And there are 2 players in the round
+    
+In this short example, the following step definition would match the action of creating a table with a certain amount of players and extract the amount of players as parameter, so that it can be reused for all different amounts of players (in the range of int).
+
+    And("There are {int} players in the round") { numberOfPlayers: Int =>
+        Table(numberOfPlayers = numberOfPlayers, _etc._)
+    }
+
+Depending on the application of the software system, step definitions can have all shapes and colors: They might be calling methods, find HTML elements in a browser, send a HTTP request, create objects and many more.
+
+TODO: How important are tools to apply BDD?
 
 ## Critical evaluation of BDD
 - Advantages
@@ -192,6 +205,16 @@ Using the (1) business language in scenarios aims to keep the business people en
 - Does BDD work?
 - Should everyone do BDD?
 
+## BDD application maturity check
+Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)
+
 ---
+
+Unordered thought:
+Scenarios have to be independent
+Scenario Outlines and Example table (loops for similar scenarios, just like Table tests)
+Steps Table (All data is used inside one scenario execution)
+
+
 
 ## References
