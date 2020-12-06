@@ -184,8 +184,7 @@
 <ol type="1">
 <li><a href="#from-tdd-to-bdd">From TDD to BDD</a></li>
 <li><a href="#examples-and-business-rules">Examples and Business Rules</a></li>
-<li><a href="#scenarios">Scenarios</a></li>
-<li><a href="#formulation">Formulation</a></li>
+<li><a href="#scenarios-and-the-gherkin-language">Scenarios and the Gherkin Language</a></li>
 </ol></li>
 <li><a href="#the-tools-of-behavior-driven-development">The Tools of Behavior-driven development</a></li>
 <li><a href="#advantages-of-behavior-driven-development">Advantages of Behavior-driven development</a></li>
@@ -286,7 +285,7 @@
 <p>Dan North describes in “Introducing BDD” how BDD is his response to TDD. In order to get a deeper understanding of what that means, we must have a closer look at TDD. TDD is a narrower approach, in which only technically focussed people are involved. The idea is to write a test that describes a feature which doesn’t exist yet, ensure it fails, and then implement that feature until the test does not fail anymore. After the new test is executed successfully and none of the existing tests is broken, the developer can move on to the next test for the next feature. This test-first approach is mentioned in the early publications about Extreme Programming<span class="citation" data-cites="Lindstrom2004ExtremePA">(Lindstrom and Jeffries 2004)</span>.</p>
 <p>According to the agile alliance glossary<span class="citation" data-cites="agileAllianceTDD">(<span>“Glossary: TDD,”</span> n.d.)</span>, common pitfalls of a TDD using team are a “poor maintenance of the test suite – most commonly leading to a test suite with a prohibitively long running time” which sometimes leads to a “abandoned test suite (i.e. seldom or never run)[…].” Dan North explains some further pitfalls, that range from the naming of the tests, which might cause some “false sense of security”<span class="citation" data-cites="north2006introducing-bdd">(North, n.d.)</span>, to the scope and the actual functionality that needs to be tested. Thinking in terms of behavior solved these issues: The naming of an executable test is based on the behavior it should assure. The scope of the test is easier defined on the level of behavior (rather on the more technical level of test), because a behavior description has naturally a certain length and a functional scope that excludes all technical details. The question, which features should be tested, also became easier to answer: All of the behavior, that the software should have, needs to be tested. Lower level tests, which ensure the software uses a specific solution, step back and the testing scope shifts towards tests that describe the behavior of a system. Latter correlate to the original intent of writing the software and therefore are getting closer to stakeholders attention. Concluding this chapter: BDD is a successor of TDD in its nature, but shifts its scope towards a more behavioral and less technical level. At the same time, TDD can be used inside of BDD, so that both layers are addressed at the same time<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 15)</span>.</p>
 <h3 id="examples-and-business-rules">Examples and Business Rules</h3>
-<p>Examples are a mighty tool in BDD, which are used to illustrate business rules and therefore reduce the chance of misinterpreting them<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 48)</span>.</p>
+<p>Examples are a mighty tool in BDD, which are used to illustrate business rules and therefore reduce the chance of misinterpreting them<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 48)</span>. Therefore, one or more examples belong to one business rules.</p>
 <p>Examples consist of a context, an action and an outcome. The context is the state of the system before the action is applied to it. The action is the stimulus that causes the system to react. It might be another system, some scheduled action or the user of the system. The outcome is the updated state of the system after the action has taken place<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 43)</span>. It should focus on that part of the system that was influenced by the action, and does not need to contain irrelevant aspects. Moreover, an example always contains concrete data in contrast to variables. An example is what can be used to write a test for a system. One example of an example from the world of poker:</p>
 <pre><code>- Table is preflop
 - Amy is on the button
@@ -299,8 +298,35 @@
 =&gt; Raise is accepted</code></pre>
 <p><em>Here, the dashes stand for the context, the asterisk for the action and the bold arrow for the outcome.</em></p>
 <p>The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.</p>
-<h3 id="scenarios">Scenarios</h3>
-<p>TODO: What is a scenario? How is it different from an example? Executability etc.</p>
+<h3 id="scenarios-and-the-gherkin-language">Scenarios and the Gherkin Language</h3>
+<p>A scenario is a formalized interpretation of an example. Usually a language like the Gherkin language<span class="citation" data-cites="cucumberGherkinDocs">(<em>Gherkin Reference</em>, n.d.)</span> is used to that, which is a Business Readable Domain Specific Language (DSL)<span class="citation" data-cites="Fowler2008Business">(Fowler 2018)</span>, created to describe behavioral descriptions of software systems. It has only very few (primary) keywords:</p>
+<pre><code>Feature
+Rule (as of Gherkin 6)  
+Example (or Scenario)
+Given, When, Then, And, But for steps (or *)
+Background
+Scenario Outline (or Scenario Template)
+Examples</code></pre>
+<p>and a few secondary keywords used for comments, tags, data tables and doc strings. Interestingly, the keywords example and scenario are used as synonyms here, which also hints in the direction of them being very similar. A typical example for a piece of the Gherkin language from the world of poker could be:</p>
+<pre><code>Feature: Pay the winner
+
+  Rule: Player with the best hand wins
+
+    Scenario: Last betting round over -- More than one player in the round
+      Given the last betting round is over
+      And there are two players in the round
+      When the showdown happens
+      And the first player shows a full house
+      And the second player shows a flush
+      Then the first player wins the pot
+
+    Scenario: Last betting round over -- Only one player in the round
+      Given the last betting round is over
+      And one player is in the round
+      Then the player will win the pot</code></pre>
+<p>These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with “Given,” an action that start with “When” and a outcome, that starts with “Then.” It is by design that these keywords are close to the natural language for the for this reason: The Gherkin language is the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool) and at the same time readable and writable for non-technically focussed business people.</p>
+<p>Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a high level programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself.</p>
+<p><img src="images/illustration_formalization_bdd.png" /></p>
 <p>In a Cucumber.io article <span class="citation" data-cites="Rose2019Brief">(Rose 2019)</span>, Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.<br />
 - Business Language<br />
 - Real Data<br />
@@ -309,11 +335,13 @@
 - Focused<br />
 - Brief (Which is the acronym itself.)</p>
 <p>Using the business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. Real data should be used for scenarios, just like for examples, to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on the intents of the actors of the system rather which mechanics lead to the expected result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the essential parts of a illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should only describe exactly one business rule. Therefore it is possible to describe a scenario in a brief way, which makes a scenario easier to understand and discuss.</p>
-<h3 id="formulation">Formulation</h3>
-<p>Formulation: Example -&gt; Scenario e.g. by example mapping</p>
+<p>TODO: Principle: Get from bottom right (examples) towards top right (working software) repeatedly.</p>
 <hr />
 <ul>
-<li>Meetings in BDD</li>
+<li>Meetings in BDD
+<ul>
+<li>Three amigos/ Specification workshop / Discovery workshop</li>
+</ul></li>
 <li>Which goals are defined?</li>
 <li>Which areas are affected by BDD?
 <ul>
@@ -400,6 +428,12 @@ Adzic, Gojko. 2009. <em>Bridging the Communication Gap: Specification by Example
 </div>
 <div id="ref-googleTrendsBddTopic" class="csl-entry" role="doc-biblioentry">
 <span>“Data Source: Google Trends.”</span> n.d. <a href="https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=%2Fm%2F08gkql">https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=%2Fm%2F08gkql</a>.
+</div>
+<div id="ref-Fowler2008Business" class="csl-entry" role="doc-biblioentry">
+Fowler, Martin. 2018. <span>“Business Readable DSL.”</span> <a href="https://martinfowler.com/bliki/BusinessReadableDSL.html">https://martinfowler.com/bliki/BusinessReadableDSL.html</a>.
+</div>
+<div id="ref-cucumberGherkinDocs" class="csl-entry" role="doc-biblioentry">
+<em>Gherkin Reference</em>. n.d. SmartBear Software; <a href="https://cucumber.io/docs/gherkin/reference/">https://cucumber.io/docs/gherkin/reference/</a>.
 </div>
 <div id="ref-agileAllianceTDD" class="csl-entry" role="doc-biblioentry">
 <span>“Glossary: TDD.”</span> n.d. Agile Alliance; <a href="https://www.agilealliance.org/glossary/tdd">https://www.agilealliance.org/glossary/tdd</a>.

@@ -7,7 +7,7 @@ fontsize: 11pt
 numbersections: true
 listings: true
 documentclass: scrreprt
-bibliography: bibliography.bib
+bibliography: [bibliography.bib]
 csl: chicago-author-date.csl
 ---
 
@@ -17,8 +17,7 @@ csl: chicago-author-date.csl
 3. [The Principles of Behavior-driven development](#the-principles-of-behavior-driven-development)
    1. [From TDD to BDD](#from-tdd-to-bdd)
    2. [Examples and Business Rules](#examples-and-business-rules)
-   3. [Scenarios](#scenarios)
-   4. [Formulation](#formulation)
+   3. [Scenarios and the Gherkin Language](#scenarios-and-the-gherkin-language)
 4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
 5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
 6. [Conclusion](#conclusion)
@@ -76,7 +75,7 @@ Dan North describes in "Introducing BDD" how BDD is his response to TDD. In orde
 According to the agile alliance glossary[@agileAllianceTDD], common pitfalls of a TDD using team are a "poor maintenance of the test suite – most commonly leading to a test suite with a prohibitively long running time" which sometimes leads to a "abandoned test suite (i.e. seldom or never run)[...]". Dan North explains some further pitfalls, that range from the naming of the tests, which might cause some "false sense of security"[@north2006introducing-bdd], to the scope and the actual functionality that needs to be tested. Thinking in terms of behavior solved these issues: The naming of an executable test is based on the behavior it should assure. The scope of the test is easier defined on the level of behavior (rather on the more technical level of test), because a behavior description has naturally a certain length and a functional scope that excludes all technical details. The question, which features should be tested, also became easier to answer: All of the behavior, that the software should have, needs to be tested. Lower level tests, which ensure the software uses a specific solution, step back and the testing scope shifts towards tests that describe the behavior of a system. Latter correlate to the original intent of writing the software and therefore are getting closer to stakeholders attention. Concluding this chapter: BDD is a successor of TDD in its nature, but shifts its scope towards a more behavioral and less technical level. At the same time, TDD can be used inside of BDD, so that both layers are addressed at the same time[@nagy2018discovery, p. 15].
 
 ### Examples and Business Rules
-Examples are a mighty tool in BDD, which are used to illustrate business rules and therefore reduce the chance of misinterpreting them[@nagy2018discovery, p. 48].
+Examples are a mighty tool in BDD, which are used to illustrate business rules and therefore reduce the chance of misinterpreting them[@nagy2018discovery, p. 48]. Therefore, one or more examples belong to one business rules.
 
 Examples consist of a context, an action and an outcome. The context is the state of the system before the action is applied to it. The action is the stimulus that causes the system to react. It might be another system, some scheduled action or the user of the system. The outcome is the updated state of the system after the action has taken place[@nagy2018discovery, p. 43]. It should focus on that part of the system that was influenced by the action, and does not need to contain irrelevant aspects. Moreover, an example always contains concrete data in contrast to variables. An example is what can be used to write a test for a system. One example of an example from the world of poker:
 
@@ -94,8 +93,40 @@ Examples consist of a context, an action and an outcome. The context is the stat
 
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
-### Scenarios
-TODO: What is a scenario? How is it different from an example? Executability etc.
+### Scenarios and the Gherkin Language
+A scenario is a formalized interpretation of an example. Usually a language like the Gherkin language[@cucumberGherkinDocs] is used to that, which is a Business Readable Domain Specific Language (DSL)[@Fowler2008Business], created to describe behavioral descriptions of software systems. It has only very few (primary) keywords:
+    
+    Feature
+    Rule (as of Gherkin 6)  
+    Example (or Scenario)
+    Given, When, Then, And, But for steps (or *)
+    Background
+    Scenario Outline (or Scenario Template)
+    Examples
+and a few secondary keywords used for comments, tags, data tables and doc strings. Interestingly, the keywords example and scenario are used as synonyms here, which also hints in the direction of them being very similar. A typical example for a piece of the Gherkin language from the world of poker could be:
+
+    Feature: Pay the winner
+
+      Rule: Player with the best hand wins
+
+        Scenario: Last betting round over -- More than one player in the round
+          Given the last betting round is over
+          And there are two players in the round
+          When the showdown happens
+          And the first player shows a full house
+          And the second player shows a flush
+          Then the first player wins the pot
+
+        Scenario: Last betting round over -- Only one player in the round
+          Given the last betting round is over
+          And one player is in the round
+          Then the player will win the pot
+
+These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". It is by design that these keywords are close to the natural language for the for this reason: The Gherkin language is the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool) and at the same time readable and writable for non-technically focussed business people.
+
+Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a high level programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself.
+
+![](images/illustration_formalization_bdd.png)
 
 In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
 - Business Language  
@@ -106,14 +137,14 @@ In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a go
 - Brief (Which is the acronym itself.)  
 
 Using the business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. Real data should be used for scenarios, just like for examples, to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on the intents of the actors of the system rather which mechanics lead to the expected result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the essential parts of a illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should only describe exactly one business rule. Therefore it is possible to describe a scenario in a brief way, which makes a scenario easier to understand and discuss.
-  
 
-### Formulation
-Formulation: Example -> Scenario e.g. by example mapping
 
+
+TODO: Principle: Get from bottom right (examples) towards top right (working software) repeatedly.
 
 ---
 - Meetings in BDD
+  - Three amigos/ Specification workshop / Discovery workshop
 - Which goals are defined?
 - Which areas are affected by BDD?
   - The role of examples
