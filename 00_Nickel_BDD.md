@@ -144,6 +144,7 @@ What about responsibility segregation?
 
 ### How to write good scenarios/examples
 Since scenarios are examples that are formalized by a business readable DSL, but are contentwise similar, they are considered synonym for the following section. In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
+  
 1. Business Language  
 2. Real Data  
 3. Intention Revealing  
