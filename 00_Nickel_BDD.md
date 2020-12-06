@@ -60,7 +60,8 @@ For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile14,
 | [@stateOfAgile12] |     17%     | engineering practice |
 | [@stateOfAgile13] |     22%     | engineering practice |
 | [@stateOfAgile14] |     19%     | engineering practice |
-
+[Table 1]  
+  
 BDD is listed under different captions: In the earlier surveys it was listed as an agile method, then it was listed as an agile technique and since 2016 it is listed as engineering practice.
 
 ## From TDD to BDD
@@ -124,7 +125,7 @@ These two formalized examples are structurally similar to the examples that are 
 Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a (usually high-level) programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don'ts, I want to conclude this very key principle of BDD.
 
 ![](images/process_illustration_formalization_bdd.png)
-[Figure 2]  
+[Figure 1]  
   
 The goal of BDD is to engineer high-quality working software (top right). To get there, we start with examples, explained by business people and discussed with all roles that engage in the process. These are inter-humanly communicated behaviors that do not need to fulfill a highly formalized structure, other than describing the context, the action and the outcome. They get formalized with a business readable DSL (bottom right) and abstracted to business rules (top left). Both steps are taken in order to get to the top right corner of the image without disconnecting the specification and the actual software. This principle is executed repeatedly in very short feedback cycles, so that it proves the right understanding of the specification (which is the implementation) and having the right specification in place. The right software is built the right way.
 
