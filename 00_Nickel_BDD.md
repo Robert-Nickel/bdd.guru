@@ -1,6 +1,6 @@
 ---
 title: TDD to BDD - Principles and Tools with an Impact on Business Value and Communications
-subtitle: A brief essay on behavior-driven development
+subtitle: A brief essay on Behavior-Driven Development
 author: Robert Nickel
 date: 2020-11-15
 fontsize: 11pt
@@ -18,6 +18,7 @@ csl: chicago-author-date.csl
    1. [From TDD to BDD](#from-tdd-to-bdd)
    2. [Examples and Business Rules](#examples-and-business-rules)
    3. [Scenarios and the Gherkin Language](#scenarios-and-the-gherkin-language)
+   4. [How to write good scenarios/examples](#how-to-write-good-scenariosexamples)
 4. [The Tools of Behavior-driven development](#the-tools-of-behavior-driven-development)
 5. [Advantages of Behavior-driven development](#advantages-of-behavior-driven-development)
 6. [Conclusion](#conclusion)
@@ -124,11 +125,16 @@ and a few secondary keywords used for comments, tags, data tables and doc string
 
 These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". It is by design that these keywords are close to the natural language for the for this reason: The Gherkin language is the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool) and at the same time readable and writable for non-technically focussed business people.
 
-Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a high level programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself.
-
 ![](images/illustration_formalization_bdd.png)
 
-In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
+Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don'ts, I want to conclude this very key principle of BDD.
+
+![](images/process_illustration_formalization_bdd.png)
+
+The goal of BDD is to engineer high-quality working software (top right). To get there, we start with examples, explained by business people and discussed with all roles that engage in the process. These are inter-humanly communicated behaviors that do not need to fulfill a highly formalized structure, other than describing the context, the action and the outcome. They get formalized with a business readable DSL (bottom right) and abstracted to business rules (top left). Both steps are taken in order to get to the top right corner of the image without disconnecting the specification and the actual software. This principle is executed repeatedly in very short feedback cycles, so that it proves the right understanding of the specification (which is the implementation) and having the right specification in place. The right software is built the right way.
+
+### How to write good scenarios/examples
+Since scenarios are examples that are formalized by a business readable DSL, but are contentwise similar, they are considered synonym for the following section. In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
 - Business Language  
 - Real Data  
 - Intention Revealing  
@@ -136,11 +142,8 @@ In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a go
 - Focused  
 - Brief (Which is the acronym itself.)  
 
-Using the business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. Real data should be used for scenarios, just like for examples, to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on the intents of the actors of the system rather which mechanics lead to the expected result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the essential parts of a illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should only describe exactly one business rule. Therefore it is possible to describe a scenario in a brief way, which makes a scenario easier to understand and discuss.
+Using the _business language_ in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. _Real data_ should be used for scenarios to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on _revealing the intent_ of the aspect of a system, rather than on the mechanics that lead to that result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the _essential_ parts of an illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should _focus_ on describing only one business rule. Therefore it is possible to describe a scenario in a _brief_ way, which makes a scenario easier to understand and discuss for people of all roles.
 
-
-
-TODO: Principle: Get from bottom right (examples) towards top right (working software) repeatedly.
 
 ---
 - Meetings in BDD
@@ -161,7 +164,7 @@ TODO: Principle: Get from bottom right (examples) towards top right (working sof
   - What about responsibility segregation?
 
 ## The Tools of Behavior-driven development
-- Name a few examples like JBehave and/or Cucumber
+- Name a few examples like JBehave, Cucumber and SpecFlow
 - what do the tools do?
 - importance of tools
  

@@ -172,7 +172,7 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">TDD to BDD - Principles and Tools with an Impact on Business Value and Communications</h1>
-<p class="subtitle">A brief essay on behavior-driven development</p>
+<p class="subtitle">A brief essay on Behavior-Driven Development</p>
 <p class="author">Robert Nickel</p>
 <p class="date">2020-11-15</p>
 </header>
@@ -185,6 +185,7 @@
 <li><a href="#from-tdd-to-bdd">From TDD to BDD</a></li>
 <li><a href="#examples-and-business-rules">Examples and Business Rules</a></li>
 <li><a href="#scenarios-and-the-gherkin-language">Scenarios and the Gherkin Language</a></li>
+<li><a href="#how-to-write-good-scenariosexamples">How to write good scenarios/examples</a></li>
 </ol></li>
 <li><a href="#the-tools-of-behavior-driven-development">The Tools of Behavior-driven development</a></li>
 <li><a href="#advantages-of-behavior-driven-development">Advantages of Behavior-driven development</a></li>
@@ -325,17 +326,19 @@ Examples</code></pre>
       And one player is in the round
       Then the player will win the pot</code></pre>
 <p>These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with “Given,” an action that start with “When” and a outcome, that starts with “Then.” It is by design that these keywords are close to the natural language for the for this reason: The Gherkin language is the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool) and at the same time readable and writable for non-technically focussed business people.</p>
-<p>Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a high level programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself.</p>
 <p><img src="images/illustration_formalization_bdd.png" /></p>
-<p>In a Cucumber.io article <span class="citation" data-cites="Rose2019Brief">(Rose 2019)</span>, Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.<br />
+<p>Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don’ts, I want to conclude this very key principle of BDD.</p>
+<p><img src="images/process_illustration_formalization_bdd.png" /></p>
+<p>The goal of BDD is to engineer high-quality working software (top right). To get there, we start with examples, explained by business people and discussed with all roles that engage in the process. These are inter-humanly communicated behaviors that do not need to fulfill a highly formalized structure, other than describing the context, the action and the outcome. They get formalized with a business readable DSL (bottom right) and abstracted to business rules (top left). Both steps are taken in order to get to the top right corner of the image without disconnecting the specification and the actual software. This principle is executed repeatedly in very short feedback cycles, so that it proves the right understanding of the specification (which is the implementation) and having the right specification in place. The right software is built the right way.</p>
+<h3 id="how-to-write-good-scenariosexamples">How to write good scenarios/examples</h3>
+<p>Since scenarios are examples that are formalized by a business readable DSL, but are contentwise similar, they are considered synonym for the following section. In a Cucumber.io article <span class="citation" data-cites="Rose2019Brief">(Rose 2019)</span>, Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.<br />
 - Business Language<br />
 - Real Data<br />
 - Intention Revealing<br />
 - Essential<br />
 - Focused<br />
 - Brief (Which is the acronym itself.)</p>
-<p>Using the business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. Real data should be used for scenarios, just like for examples, to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on the intents of the actors of the system rather which mechanics lead to the expected result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the essential parts of a illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should only describe exactly one business rule. Therefore it is possible to describe a scenario in a brief way, which makes a scenario easier to understand and discuss.</p>
-<p>TODO: Principle: Get from bottom right (examples) towards top right (working software) repeatedly.</p>
+<p>Using the <em>business language</em> in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. <em>Real data</em> should be used for scenarios to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on <em>revealing the intent</em> of the aspect of a system, rather than on the mechanics that lead to that result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the <em>essential</em> parts of an illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should <em>focus</em> on describing only one business rule. Therefore it is possible to describe a scenario in a <em>brief</em> way, which makes a scenario easier to understand and discuss for people of all roles.</p>
 <hr />
 <ul>
 <li>Meetings in BDD
@@ -365,7 +368,7 @@ Examples</code></pre>
 </ul>
 <h2 id="the-tools-of-behavior-driven-development">The Tools of Behavior-driven development</h2>
 <ul>
-<li>Name a few examples like JBehave and/or Cucumber</li>
+<li>Name a few examples like JBehave, Cucumber and SpecFlow</li>
 <li>what do the tools do?</li>
 <li>importance of tools</li>
 </ul>
