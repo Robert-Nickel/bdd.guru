@@ -2,7 +2,7 @@
 title: TDD to BDD - Principles and Tools with an Impact on Business Value and Communications
 subtitle: A brief essay on Behavior-Driven Development
 author: Robert Nickel
-date: 2020-11-15
+date: 2020-12-06
 fontsize: 11pt
 numbersections: true
 listings: true
