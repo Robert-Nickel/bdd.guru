@@ -93,7 +93,7 @@ Examples consist of a context, an action and an outcome. The context is the stat
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
 ### Scenarios, the Gherkin Language and working software
-A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)[@Fowler2008Business], for example the Gherkin language[@cucumberGherkinDocs], is used to describe behavioral descriptions of a software system. The Gherkin language has only very few (primary) keywords:
+A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)[@Fowler2008Business]is used to describe behavioral descriptions of a software system. Business Readable DSLs enable "deep and rich communication channel between software development and the underlying domain"[@Fowler2008Business]. One example of such a DSL is the Gherkin language[@cucumberGherkinDocs], which has only very few (primary) keywords:
     
     Feature
     Rule (as of Gherkin 6)  
@@ -121,7 +121,7 @@ and even less secondary keywords used for comments, tags, data tables and doc st
           And one player is in the round
           Then the player will win the pot
 
-These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". The Gherkin language exists for different natural languages (english, german, ...), and it is by design that the used keyword-structure is close to that of a natural language. The reason for that is the Gherkin language being the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool like Cucumber) and at the same time readable and writable for non-technically focussed business people.
+These two formalized examples are structurally similar to the examples that are defined above. One or multiple rules belong to one feature (which maps to a story in Scrum terminology), and one or multiple scenarios are subordinated to a rule. The scenarios have a context that start with "Given", an action that start with "When" and a outcome, that starts with "Then". The Gherkin language exists for different natural languages (english, german, ...), and it is by design that the used keyword-structure is close to that of a natural language. The reason for that is the Gherkin language being the clue to a specification level that is both, executable as behavioral specification (using a BDD Tool like Cucumber) and at the same time readable for non-technically focussed business people.
 
 Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a (usually high-level) programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don'ts, I want to conclude this very key principle of BDD.
 
@@ -210,11 +210,10 @@ Consider defining somewhat of a maturity check of the application of BDD. It mig
 
 ---
 
-Unordered thought:
+Unordered thoughts:
 Scenarios have to be independent
 Scenario Outlines and Example table (loops for similar scenarios, just like Table tests)
 Steps Table (All data is used inside one scenario execution)
-
 
 
 ## References
