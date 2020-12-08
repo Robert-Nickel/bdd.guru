@@ -184,7 +184,7 @@
 <li><a href="#the-principles-of-behavior-driven-development">The Principles of Behavior-driven development</a>
 <ol type="1">
 <li><a href="#examples-and-business-rules">Examples and Business Rules</a></li>
-<li><a href="#scenarios-the-gherkin-language-and-working-software">Scenarios, the Gherkin Language and working software</a></li>
+<li><a href="#scenarios-the-gherkin-language-and-working-software">Scenarios, the Gherkin Language and Working Software</a></li>
 <li><a href="#specification---a-contract">Specification - a Contract?</a></li>
 <li><a href="#roles-and-responsibilities">Roles and Responsibilities</a></li>
 </ol></li>
@@ -194,8 +194,18 @@
 <li><a href="#three-amigos-specification-workshop--discovery-workshop">Three amigos/ Specification workshop / Discovery workshop</a></li>
 <li><a href="#the-tools-of-bdd">The Tools of BDD</a></li>
 </ol></li>
-<li><a href="#critical-evaluation-of-bdd">Critical evaluation of BDD</a></li>
+<li><a href="#critical-evaluation-of-bdd">Critical evaluation of BDD</a>
+<ol type="1">
+<li><a href="#advantages">Advantages</a>
+<ol type="1">
+<li><a href="#collaboration">Collaboration</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#behavior-is-tested">Behavior is tested</a></li>
+<li><a href="#compatibility-with-other-frameworks">Compatibility with other frameworks?</a></li>
+</ol></li>
+</ol></li>
 <li><a href="#bdd-application-maturity-check">BDD application maturity check</a></li>
+<li><a href="#">…</a></li>
 <li><a href="#references">References</a></li>
 </ol>
 <h2 id="introduction">Introduction</h2>
@@ -207,7 +217,7 @@
 <ol start="2" type="1">
 <li>Perceived functional dissonance of software</li>
 </ol>
-<p>Sometimes people think that software works in a certain way but it doesn’t. While or after building software, some features might work at some point in time and then break without humans recognizing it. The software might stop (or even worse: not stop) in critical, unexpected moments which can cost, depending on the software, a lot of customers, money or even lifes. The common approach to solve this problem is called quality assurance and contains testing the software repeatedly.</p>
+<p>Sometimes people think that software works in a certain way but it doesn’t. While or after building software, some features might work at some point in time and then break without humans recognizing it. The software might stop (or even worse: not stop) in critical, unexpected moments which can cost, depending on the software, a lot of customers, money or even lifes. The common approach to solve this problem is called quality assurance (QA) and contains testing the software repeatedly.</p>
 <p>The effects of these problems need to be discovered. In a waterfall-based approach the feedback cycle closes only after an increment went through specification, implementation and quality assurance, which means, that if any increment went off track, it is discovered at a late point in time.</p>
 <p>The fundamental idea of BDD is to focus on the behavior of a software system while moving the solutions to the above mentioned problems, specification and quality assurance, closer together.<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 3)</span> Thereby, the feedback cycle shortens and off-track increments are harder to produce and less impactful. In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.</p>
 <h2 id="why-behavior-driven-development">Why Behavior-driven development?</h2>
@@ -304,7 +314,7 @@
 =&gt; Raise is accepted</code></pre>
 <p><em>Here, the dashes stand for the context, the asterisk for the action and the bold arrow for the outcome.</em></p>
 <p>The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.</p>
-<h3 id="scenarios-the-gherkin-language-and-working-software">Scenarios, the Gherkin Language and working software</h3>
+<h3 id="scenarios-the-gherkin-language-and-working-software">Scenarios, the Gherkin Language and Working Software</h3>
 <p>A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)<span class="citation" data-cites="Fowler2008Business">(Fowler 2008)</span>is used to describe behavioral descriptions of a software system. Business Readable DSLs enable “deep and rich communication channel between software development and the underlying domain”<span class="citation" data-cites="Fowler2008Business">(Fowler 2008)</span>. One example of such a DSL is the Gherkin language<span class="citation" data-cites="cucumberGherkinDocs">(<em>Gherkin Reference</em>, n.d.)</span>, which has only very few (primary) keywords:</p>
 <pre><code>Feature
 Rule (as of Gherkin 6)  
@@ -313,7 +323,7 @@ Given, When, Then, And, But for steps (or *)
 Background
 Scenario Outline (or Scenario Template)
 Examples</code></pre>
-<p>and even less secondary keywords used for comments, tags, data tables and doc strings, which are relevant for this principle. Interestingly, the keywords ‘example’ and ‘scenario’ are used as synonyms here, which also hints towards them being very similar. An example for a specification that contains a feature, a rule and two scenarios from the world of poker is the following.</p>
+<p>and even less secondary keywords used for comments, tags, data tables and doc strings, which are not relevant for this principle. ‘scenario outline’ and ‘examples’ provide the possibility to loop through similar scenarios with different aspects of examples (similar to table tests), but are not of further interest at this point. Interestingly, the keywords ‘example’ and ‘scenario’ are used as synonyms here, which also indicates that they are very similar. An example for a specification that contains a feature, a rule and two scenarios from the world of poker is the following.</p>
 <pre><code>Feature: Pay the winner
 
   Rule: Player with the best hand wins
@@ -365,8 +375,20 @@ Examples</code></pre>
     Table(numberOfPlayers = numberOfPlayers)
 }</code></pre>
 <p>Depending on the application of the software system, step definitions can have all shapes and colors: They might be calling methods, find HTML elements in a browser, send a HTTP request, create objects and many more.</p>
-<p>TODO: How important are tools to apply BDD?</p>
+<p>Although the usage of a BDD tool is recommended, it is not required. Tools support the application of the principles, therefore a deep understanding of the principles is a prerequisite to productive usage of tools. “One typical mistake is to see BDD as a tool-thing. BDD is primarily about collabo- ration and domain discovery; any “BDD tool” can be only useful in supporting this process."<span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 4)</span>.</p>
 <h2 id="critical-evaluation-of-bdd">Critical evaluation of BDD</h2>
+<p>In this chapter I will do a critical evaluation of BDD, by having deeper look at advantages (apart from the obvious ones) and disadvantages (in terms of compatibility with other frameworks and ease of application) for different areas that are affected by using BDD.</p>
+<h3 id="advantages">Advantages</h3>
+<h4 id="collaboration">Collaboration</h4>
+<p>The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are commonly known as being far apart from each other, almost merge when a team applies BDD. The development department’s turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, (thus by putting the behavior of the system in the focus of everyone,) an ubiquitous language<span class="citation" data-cites="evans2004ddd">(Evans 2004, 32ff)</span> evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.</p>
+<h4 id="documentation">Documentation</h4>
+<p>Imagine a software engineer joining a team which is developing a poker software for more than 3 months already. One of his first onboarding tasks is to read the code to understand, what the system does. He has to read the most abstract formulation of a set of rules that describe the poker variant, in order to understand what problem the system solves. When he asks questions to fellow team members, they are likely to explain the rules by examples like:</p>
+<pre><code>Imagine you are playing poker with two friends. After the river is revealed, it is king of clubs, the last betting round starts and the small blind checks to you. Now you have the options to either check or raise to the next player. But since you made your broadway, and the other players are more passive players, the question is more towards how much you are going to raise.</code></pre>
+<p>It is easier to start with a concrete example before getting abstract (by reading often times refactored code). An example for this can be found in the world of developmental psychology: For young babies objects like toys ‘exist’ only if they can be seen (or touched etc). As soon as the toy disappears, for example behind someones back, it is ‘gone.’ Over time, these young humans become able to the sense of abstraction, which means they start understanding that there is an object, even if it cannot be seen, it still exists.<span class="citation" data-cites="objectPermanenceWiki">(<span>“Object Permanence,”</span> n.d.)</span> In this example, the new software engineer is like the baby in terms of domain knowledge. Examples can be understood by far easier than the high abstraction of existing software, because the sense for abstraction needs to evolve first. If the given team uses BDD, there exists a path into developing the required sense of abstraction, which is by deeply understanding the specification by example.</p>
+<p>This is just an example(!) of what concrete documentation could be useful for. There could be people in different roles, inside or outside the team, that are interested in the behavior of a system. As time goes by, people could forget some aspects of the behavior of the system, or a test could fail and can be read again to make a better decision on how to move on.</p>
+<h4 id="behavior-is-tested">Behavior is tested</h4>
+<p>// TODO If a BT fails -&gt; Problem! // TODO If a not BT fails -&gt; Problem?</p>
+<h4 id="compatibility-with-other-frameworks">Compatibility with other frameworks?</h4>
 <ul>
 <li>Advantages</li>
 <li>motivation
@@ -418,12 +440,15 @@ Examples</code></pre>
 </ul>
 <h2 id="bdd-application-maturity-check">BDD application maturity check</h2>
 <p>Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)</p>
-<hr />
-<p>Unordered thoughts: Scenarios have to be independent Scenario Outlines and Example table (loops for similar scenarios, just like Table tests) Steps Table (All data is used inside one scenario execution)</p>
+<p>Have a sense for QA inside the team | v Write automated tests within the development team | v Understand what different test levels are useful for (and what not) | v Consider readability and maintainability of written tests (e.g. by having small, focussed and isolated tests, using Given-When-Then structures etc.) | v Use the same or a similar language in the tests as in the specification documents | V Consider QA before specification is done | v Have discussions between people from specification, development and QA (3 Amigos) | v … —</p>
+<p>Unordered thoughts: Scenarios have to be independent</p>
 <h2 class="unnumbered" id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Adzic2009Bridging" class="csl-entry" role="doc-biblioentry">
 Adzic, Gojko. 2009. <em>Bridging the Communication Gap: Specification by Example and Agile Acceptance Testing</em>.
+</div>
+<div id="ref-evans2004ddd" class="csl-entry" role="doc-biblioentry">
+Evans, Eric. 2004. <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley.
 </div>
 <div id="ref-Fowler2008Business" class="csl-entry" role="doc-biblioentry">
 Fowler, Martin. 2008. <span>“Business Readable DSL.”</span> <a href="https://martinfowler.com/bliki/BusinessReadableDSL.html">https://martinfowler.com/bliki/BusinessReadableDSL.html</a>.
@@ -445,6 +470,9 @@ Nagy, G., and S. Rose. 2018. <em>Discovery: Explore Behaviour Using Examples</em
 </div>
 <div id="ref-north2006introducing-bdd" class="csl-entry" role="doc-biblioentry">
 North, Dan. n.d. <span>“Introducing BDD.”</span> <a href="https://dannorth.net/introducing-bdd/">https://dannorth.net/introducing-bdd/</a>.
+</div>
+<div id="ref-objectPermanenceWiki" class="csl-entry" role="doc-biblioentry">
+<span>“Object Permanence.”</span> n.d. <a href="https://en.wikipedia.org/wiki/Object_permanence">https://en.wikipedia.org/wiki/Object_permanence</a>.
 </div>
 <div id="ref-Rose2019Brief" class="csl-entry" role="doc-biblioentry">
 Rose, Seb. 2019. <span>“Keep Your Scenarios BRIEF.”</span> <a href="https://cucumber.io/blog/bdd/keep-your-scenarios-brief/">https://cucumber.io/blog/bdd/keep-your-scenarios-brief/</a>.

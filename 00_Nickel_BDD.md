@@ -17,7 +17,7 @@ csl: chicago-author-date.csl
 3. [From TDD to BDD](#from-tdd-to-bdd)
 4. [The Principles of Behavior-driven development](#the-principles-of-behavior-driven-development)
    1. [Examples and Business Rules](#examples-and-business-rules)
-   2. [Scenarios, the Gherkin Language and working software](#scenarios-the-gherkin-language-and-working-software)
+   2. [Scenarios, the Gherkin Language and Working Software](#scenarios-the-gherkin-language-and-working-software)
    3. [Specification - a Contract?](#specification---a-contract)
    4. [Roles and Responsibilities](#roles-and-responsibilities)
 5. [How to do BDD right](#how-to-do-bdd-right)
@@ -25,8 +25,14 @@ csl: chicago-author-date.csl
    2. [Three amigos/ Specification workshop / Discovery workshop](#three-amigos-specification-workshop--discovery-workshop)
    3. [The Tools of BDD](#the-tools-of-bdd)
 6. [Critical evaluation of BDD](#critical-evaluation-of-bdd)
+   1. [Advantages](#advantages)
+      1. [Collaboration](#collaboration)
+      2. [Documentation](#documentation)
+      3. [Behavior is tested](#behavior-is-tested)
+      4. [Compatibility with other frameworks?](#compatibility-with-other-frameworks)
 7. [BDD application maturity check](#bdd-application-maturity-check)
-8. [References](#references)
+8. [...](#)
+9. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -37,7 +43,7 @@ Often communication between people is required before software can be built, bec
 
 2. Perceived functional dissonance of software
 
-Sometimes people think that software works in a certain way but it doesn't. While or after building software, some features might work at some point in time and then break without humans recognizing it. The software might stop (or even worse: not stop) in critical, unexpected moments which can cost, depending on the software, a lot of customers, money or even lifes. The common approach to solve this problem is called quality assurance and contains testing the software repeatedly.
+Sometimes people think that software works in a certain way but it doesn't. While or after building software, some features might work at some point in time and then break without humans recognizing it. The software might stop (or even worse: not stop) in critical, unexpected moments which can cost, depending on the software, a lot of customers, money or even lifes. The common approach to solve this problem is called quality assurance (QA) and contains testing the software repeatedly.
 
 The effects of these problems need to be discovered. In a waterfall-based approach the feedback cycle closes only after an increment went through specification, implementation and quality assurance, which means, that if any increment went off track, it is discovered at a late point in time.
 
@@ -92,7 +98,7 @@ Examples consist of a context, an action and an outcome. The context is the stat
 
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
-### Scenarios, the Gherkin Language and working software
+### Scenarios, the Gherkin Language and Working Software
 A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL)[@Fowler2008Business]is used to describe behavioral descriptions of a software system. Business Readable DSLs enable "deep and rich communication channel between software development and the underlying domain"[@Fowler2008Business]. One example of such a DSL is the Gherkin language[@cucumberGherkinDocs], which has only very few (primary) keywords:
     
     Feature
@@ -102,7 +108,8 @@ A scenario is a formalized interpretation of an example. To formalize the exampl
     Background
     Scenario Outline (or Scenario Template)
     Examples
-and even less secondary keywords used for comments, tags, data tables and doc strings, which are relevant for this principle. Interestingly, the keywords 'example' and 'scenario' are used as synonyms here, which also hints towards them being very similar. An example for a specification that contains a feature, a rule and two scenarios from the world of poker is the following.
+and even less secondary keywords used for comments, tags, data tables and doc strings, which are not relevant for this principle. 
+'scenario outline' and 'examples' provide the possibility to loop through similar scenarios with different aspects of examples (similar to table tests), but are not of further interest at this point. Interestingly, the keywords 'example' and 'scenario' are used as synonyms here, which also indicates that they are very similar. An example for a specification that contains a feature, a rule and two scenarios from the world of poker is the following.
 
     Feature: Pay the winner
 
@@ -172,9 +179,32 @@ In this short example, the following step definition would match the action of c
 
 Depending on the application of the software system, step definitions can have all shapes and colors: They might be calling methods, find HTML elements in a browser, send a HTTP request, create objects and many more.
 
-TODO: How important are tools to apply BDD?
+Although the usage of a BDD tool is recommended, it is not required. Tools support the application of the principles, therefore a deep understanding of the principles is a prerequisite to productive usage of tools. "One typical mistake is to see BDD as a tool-thing. BDD is primarily about collabo- ration and domain discovery; any “BDD tool” can be only useful in supporting this process."[@nagy2018discovery, p. 4].
 
 ## Critical evaluation of BDD
+
+In this chapter I will do a critical evaluation of BDD, by having deeper look at advantages (apart from the obvious ones) and disadvantages (in terms of compatibility with other frameworks and ease of application) for different areas that are affected by using BDD.
+
+### Advantages
+#### Collaboration
+The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are commonly known as being far apart from each other, almost merge when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, (thus by putting the behavior of the system in the focus of everyone,) an ubiquitous language[@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
+
+#### Documentation
+Imagine a software engineer joining a team which is developing a poker software for more than 3 months already. One of his first onboarding tasks is to read the code to understand, what the system does. He has to read the most abstract formulation of a set of rules that describe the poker variant, in order to understand what problem the system solves. When he asks questions to fellow team members, they are likely to explain the rules by examples like: 
+
+    Imagine you are playing poker with two friends. After the river is revealed, it is king of clubs, the last betting round starts and the small blind checks to you. Now you have the options to either check or raise to the next player. But since you made your broadway, and the other players are more passive players, the question is more towards how much you are going to raise.
+
+It is easier to start with a concrete example before getting abstract (by reading often times refactored code). An example for this can be found in the world of developmental psychology: For young babies objects like toys 'exist' only if they can be seen (or touched etc). As soon as the toy disappears, for example behind someones back, it is 'gone'. Over time, these young humans become able to the sense of abstraction, which means they start understanding that there is an object, even if it cannot be seen, it still exists.[@objectPermanenceWiki] In this example, the new software engineer is like the baby in terms of domain knowledge. Examples can be understood by far easier than the high abstraction of existing software, because the sense for abstraction needs to evolve first. If the given team uses BDD, there exists a path into developing the required sense of abstraction, which is by deeply understanding the specification by example.
+
+This is just an example(!) of what concrete documentation could be useful for. There could be people in different roles, inside or outside the team, that are interested in the behavior of a system. As time goes by, people could forget some aspects of the behavior of the system, or a test could fail and can be read again to make a better decision on how to move on.
+
+#### Behavior is tested
+// TODO If a BT fails -> Problem!
+// TODO If a not BT fails -> Problem?
+
+#### Compatibility with other frameworks?
+
+
 - Advantages
 - motivation
   - Does devteam win by invitation to business participation?
@@ -208,12 +238,34 @@ TODO: How important are tools to apply BDD?
 ## BDD application maturity check
 Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)
 
+
+Have a sense for QA inside the team
+|
+v
+Write automated tests within the development team
+|
+v
+Understand what different test levels are useful for (and what not)
+|
+v
+Consider readability and maintainability of written tests (e.g. by having small, focussed and isolated tests, using Given-When-Then structures etc.)
+|
+v
+Use the same or a similar language in the tests as in the specification documents
+|
+V
+Consider QA before specification is done
+|
+v
+Have discussions between people from specification, development and QA (3 Amigos)
+|
+v
+...
 ---
 
 Unordered thoughts:
 Scenarios have to be independent
-Scenario Outlines and Example table (loops for similar scenarios, just like Table tests)
-Steps Table (All data is used inside one scenario execution)
+
 
 
 ## References
