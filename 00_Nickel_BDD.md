@@ -31,8 +31,7 @@ csl: chicago-author-date.csl
       3. [Behavior is tested](#behavior-is-tested)
       4. [Compatibility with other frameworks?](#compatibility-with-other-frameworks)
 7. [BDD application maturity check](#bdd-application-maturity-check)
-8. [...](#)
-9. [References](#references)
+8. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -260,12 +259,15 @@ v
 Have discussions between people from specification, development and QA (3 Amigos)
 |
 v
-...
+
+
+
 ---
 
 Unordered thoughts:
 Scenarios have to be independent
 
+---
 
 
 ## References
