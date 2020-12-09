@@ -252,7 +252,7 @@ For the mentioned reasons, behavioral tests do not replace unit tests, and there
 8. to be continued..
 
 ## TODO: Conclusion
-TODO: Should everyone do BDD?
+// TODO: Should everyone do BDD?
 
 ---
 
