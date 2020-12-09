@@ -23,15 +23,18 @@ csl: chicago-author-date.csl
 5. [How to do BDD right](#how-to-do-bdd-right)
    1. [How to write good scenarios/examples](#how-to-write-good-scenariosexamples)
    2. [Three amigos/ Specification workshop / Discovery workshop](#three-amigos-specification-workshop--discovery-workshop)
-   3. [The Tools of BDD](#the-tools-of-bdd)
+   3. [TODO: 5 Whys](#todo-5-whys)
+   4. [The Tools of BDD](#the-tools-of-bdd)
 6. [Critical evaluation of BDD](#critical-evaluation-of-bdd)
    1. [Advantages](#advantages)
       1. [Collaboration](#collaboration)
-      2. [Documentation](#documentation)
-      3. [Behavior is tested](#behavior-is-tested)
-      4. [Compatibility with other frameworks?](#compatibility-with-other-frameworks)
-7. [BDD application maturity check](#bdd-application-maturity-check)
-8. [References](#references)
+      2. [TODO: Business value](#todo-business-value)
+      3. [Documentation](#documentation)
+      4. [Behavior and Tests](#behavior-and-tests)
+   2. [Limitations](#limitations)
+7. [Approaching BDD](#approaching-bdd)
+8. [Conclusion](#conclusion)
+9. [References](#references)
 
 ## Introduction
 The ultimate goal for every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all this there are (at least) two major problems:
@@ -163,6 +166,9 @@ Using the (1) business language in scenarios aims to keep the business people en
 
 ### Three amigos/ Specification workshop / Discovery workshop
 
+### TODO: 5 Whys
+What is the role of the 5 Whys?
+
 ### The Tools of BDD
 Although applying BDD does not require the usage of high-level tools such as Cucumber, SpecFlow, Behat, GoDog etc., it is common and useful to do that. A lot of those tools are based on Cucumber, a list of different implementations and their corresponding officiality can be found here on Cucumbers installation page[@cucumberInstallation]. For most common programming languages and platforms a Cucumber-based implementation exists.
 
@@ -181,12 +187,17 @@ Depending on the application of the software system, step definitions can have a
 Although the usage of a BDD tool is recommended, it is not required. Tools support the application of the principles, therefore a deep understanding of the principles is a prerequisite to productive usage of tools. "One typical mistake is to see BDD as a tool-thing. BDD is primarily about collabo- ration and domain discovery; any “BDD tool” can be only useful in supporting this process."[@nagy2018discovery, p. 4].
 
 ## Critical evaluation of BDD
+// TODO: get rid of this chapter. Dont use 4th level captions.  
 
 In this chapter I will do a critical evaluation of BDD, by having deeper look at advantages (apart from the obvious ones) and disadvantages (in terms of compatibility with other frameworks and ease of application) for different areas that are affected by using BDD.
 
 ### Advantages
 #### Collaboration
-The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are commonly known as being far apart from each other, almost merge when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, (thus by putting the behavior of the system in the focus of everyone,) an ubiquitous language[@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
+The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language[@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
+// TODO: Dev Team is invited to business participation. Find out who said "Devs have to become somewhat of domain experts". Find out, if a deeper business understanding increases the motivation of the dev team.
+
+#### TODO: Business value
+// TODO: How is the business value affected by using BDD?
 
 #### Documentation
 Imagine a software engineer joining a team which is developing a poker software for more than 3 months already. One of his first onboarding tasks is to read the code to understand, what the system does. He has to read the most abstract formulation of a set of rules that describe the poker variant, in order to understand what problem the system solves. When he asks questions to fellow team members, they are likely to explain the rules by examples like: 
@@ -197,77 +208,45 @@ It is easier to start with a concrete example before getting abstract (by readin
 
 This is just an example(!) of what concrete documentation could be useful for. There could be people in different roles, inside or outside the team, that are interested in the behavior of a system. As time goes by, people could forget some aspects of the behavior of the system, or a test could fail and can be read again to make a better decision on how to move on.
 
-#### Behavior is tested
-// TODO If a BT fails -> Problem!
-// TODO If a not BT fails -> Problem?
+// TODO: Living documentation
 
-#### Compatibility with other frameworks?
+#### Behavior and Tests
+// TODO If a BT fails -> Problem!  
+// TODO If a not BT fails -> Problem?  
+// TODO Do passing tests mean anything in terms of business value?  
+// TODO Is it more useful to have higher level tests than lower level unit tests? Are both testing levels required? Examples?  
+  
+// TODO Having BDD tests avoid doing "too much" and "too less" and enforces "just right"  
 
 
-- Advantages
-- motivation
-  - Does devteam win by invitation to business participation?
-  - Does a deeper (than a scrum user story) understanding of the business questions increase the dev team's motivation?
-- specification
-- business value
-  - Five whys
-- communications
-  - Business experts can read the specification code (aka test code)
-- coding
-  - Does BDD prevent too much code or code that does too much and help focus on the actual requirements?
-- quality assurance (getting closer to specification)
-  - Do passing tests mean anything in terms of business value?
-  - Is it more useful to have higher level tests than lower level unit tests? Are both testing levels required? Examples?
-- documentation
-  - Executable specification as living documentation
-- Qualitative
-  - limitations
-  - possibility (Useful aspects of BDD)
-- Quantitative proof that BDD works?
-- From the industry point of view: How can BDD be approached?
-  - Is it possible to start with tech only or business only adoption, or does it have to happen simultaniously?
-- Different layers of adoption
+### Limitations
+TODO Qualitative limitations
+TODO Quantitative proof that BDD works?
+TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
+
+## Approaching BDD 
+// TODO: From the industry point of view: How can BDD be approached?  
+// TODO: Is it possible to start with tech only or business only adoption, or does it have to happen simultaniously?  
+// TODO: Different layers of adoption
   - Consider: https://dzone.com/articles/the-five-stages-of-bdd-and-agile-adoption
   - What are the important understandings of each layer?
   - Which roles are involved & affected? What about the motivation of each of those roles?
   - Is it possible to quantify the adoption of BDD in terms of those layers?
-- Does BDD work?
+// TODO: Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)  
+
+1. Have a sense for QA inside the team
+2. Write automated tests within the development team
+3. Understand what different test levels are useful for (and what not)
+4. Consider readability and maintainability of written tests (e.g. by having small, focussed and isolated tests, using Given-When-Then structures etc.)
+5. Use the same or a similar language in the tests as in the specification documents
+6. Consider QA before specification is done
+7. Have discussions between people from specification, development and QA (3 Amigos)
+8. to be continued..
+
+---
+
+## Conclusion
 - Should everyone do BDD?
-
-## BDD application maturity check
-Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)
-
-
-Have a sense for QA inside the team
-|
-v
-Write automated tests within the development team
-|
-v
-Understand what different test levels are useful for (and what not)
-|
-v
-Consider readability and maintainability of written tests (e.g. by having small, focussed and isolated tests, using Given-When-Then structures etc.)
-|
-v
-Use the same or a similar language in the tests as in the specification documents
-|
-V
-Consider QA before specification is done
-|
-v
-Have discussions between people from specification, development and QA (3 Amigos)
-|
-v
-
-
-
----
-
-Unordered thoughts:
-Scenarios have to be independent
-
----
 
 
 ## References
