@@ -22,9 +22,8 @@ csl: chicago-author-date.csl
    4. [Roles and Responsibilities](#roles-and-responsibilities)
 5. [How to do BDD right](#how-to-do-bdd-right)
    1. [How to write good scenarios/examples](#how-to-write-good-scenariosexamples)
-   2. [Three amigos/ Specification workshop / Discovery workshop](#three-amigos-specification-workshop--discovery-workshop)
-   3. [TODO: 5 Whys](#todo-5-whys)
-   4. [The Tools of BDD](#the-tools-of-bdd)
+   2. [Requirement Workshops](#requirement-workshops)
+   3. [The Tools of BDD](#the-tools-of-bdd)
 6. [Evaluation of BDD](#evaluation-of-bdd)
    1. [Collaboration](#collaboration)
    2. [Business value](#business-value)
@@ -76,7 +75,7 @@ For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile14,
 BDD is listed under different captions: In the earlier surveys it was listed as an agile method, then it was listed as an agile technique and since 2016 it is listed as engineering practice.
 
 ## From TDD to BDD
-Dan North describes in "Introducing BDD" [@north2006introducing-bdd] how BDD is his response to TDD. In order to get a deeper understanding of what that means, we must have a closer look at TDD. TDD is a narrower approach than BDD, in which mostly only technically focussed people are involved. The idea is to write a test that describes a feature which doesn't exist yet, ensure it fails, and then implement that feature until the test does not fail anymore and refactor the code afterwards. After the new test is executed successfully, the code quality is on an acceptable level and none of the existing tests is broken, the developer can move on to the next test for the next feature. This test-first approach is mentioned in the early publications about Extreme Programming [@Lindstrom2004ExtremePA].
+Dan North describes in "Introducing BDD" [@north2006introducing-bdd] how BDD is his response to TDD. In order to get a deeper understanding of what that means, we must have a closer look at TDD. TDD is a narrower approach than BD, in which mostly only technically focussed people are involved. The idea is to write a test that describes a feature which doesn't exist yet, ensure it fails, and then implement that feature until the test does not fail anymore and refactor the code afterwards. After the new test is executed successfully, the code quality is on an acceptable level and none of the existing tests is broken, the developer can move on to the next test for the next feature. This test-first approach is mentioned in the early publications about Extreme Programming [@Lindstrom2004ExtremePA].
 
 ## The Principles of Behavior-driven development
 The term behavior-driven development, as it was introduced by Dan North in 2006 [@north2006introducing-bdd], explicitly avoided the term "test" in order to keep business people engaged.[nagy2018discovery, p.10] This is a strong hint towards the most fundamental principle of BDD: bringing the specification and the quality assurance together or in other terms: "Bridging the Communication Gap", which is the title of the book by Gojko Adzic [@Adzic2009Bridging] that describes a very similar idea which he names "specification by example" and "agile acceptance testing".
@@ -166,10 +165,14 @@ Since scenarios are examples that are formalized by a business readable DSL, but
 
 Using the (1) business language in scenarios aims to keep the business people engaged and to bring it more into line with the actual software. (2) Real data should be used for scenarios to reveal the intention of it. Another way of revealing the intention of a scenario is by focusing on (3) revealing the intent of the aspect of a system, rather than on the mechanics that lead to that result. This applies to the name of a scenario just as much as to the content. Focussing a scenario onto only the (4) essential parts of an illustrated business rule means to remove everything that does not directly contribute to the readers understanding of the system. Moreover, one scenario should (5) focus on describing only one business rule. Therefore it is possible to describe a scenario in a (6) brief way, which makes a scenario easier to understand and discuss for people of all roles.
 
-### Three amigos/ Specification workshop / Discovery workshop
+### Requirement Workshops
+The meeting, in which business experts, software engineers and QA collaborate to discover the specification, is called 'Three Amigos' [@agileAllianceThreeAmigos], 'specification workshop', 'backlog refinement' or 'requirement workshop' [@nagy2018discovery, p. 24]. The meeting aims to discuss and explore stories brought in by the business representants, and to illustrate it with concrete examples. Although the length of such a meeting is not specified in general, it applies that the more frequently it is done, the shorter it can be. The method called 'Example Mapping' [@Wynne2015Example] can provide structure and guidance through the process. It basically defines four kinds of entities: examples, rules, questions and user stories. Starting with a user story, written on a yellow index card, the already known rules for it are written on blue index cards right below. For each rule, examples are written on green index cards while questions, that cannot be answered within the meeting, materialize on red index cards. 
 
-### TODO: 5 Whys
-What is the role of the 5 Whys?
+![](images/example_mapping.png)
+[Figure 2, [@Wynne2015Example]]
+
+The cards are written as the conversation unfolds, and thereby "build up a visual representation on the table in front of us reflecting back our current understanding of the story" [@Wynne2015Example]. Alternatively it is possible to write the specification directly in Gherkin language in the meeting, but it might not be fast enough for the discussion and cause distraction.  
+Conclusion: The requirement workshop is executed repeatedly and involves business people, software engineers and QA. The workshop aims to zoom in and discuss specification in much detail.
 
 ### The Tools of BDD
 Although applying BDD does not require the usage of high-level tools such as Cucumber, SpecFlow, Behat, GoDog etc., it is common and useful to do that. A lot of those tools are based on Cucumber, a list of different implementations and their corresponding officiality can be found here on Cucumbers installation page [@cucumberInstallation]. For most common programming languages and platforms a Cucumber-based implementation exists.
@@ -190,8 +193,10 @@ Although the usage of a BDD tool is recommended, it is not required. Tools suppo
 
 ## Evaluation of BDD
 ### Collaboration
-The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language [@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
-// TODO: Dev Team is invited to business participation. Find out who said "Devs have to become somewhat of domain experts". Find out, if a deeper business understanding increases the motivation of the dev team.
+The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language [@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.  
+// TODO: Dev Team is invited to business participation.
+// TODO: Find out who said "Devs have to become somewhat of domain experts".  
+// TODO: Find out, if a deeper business understanding increases the motivation of the dev team.
 
 ### Business value
 The key motivation to time and money into a software is it's business value.  
