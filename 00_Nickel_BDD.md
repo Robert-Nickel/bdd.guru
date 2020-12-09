@@ -49,12 +49,12 @@ Sometimes people think that software works in a certain way but it doesn't. Whil
 
 The effects of these problems need to be discovered. In a waterfall-based approach the feedback cycle closes only after an increment went through specification, implementation and quality assurance, which means, that if any increment went off track, it is discovered at a late point in time.
 
-The fundamental idea of BDD is to focus on the behavior of a software system while moving the solutions to the above mentioned problems, specification and quality assurance, closer together.[@nagy2018discovery, p.3] Thereby, the feedback cycle shortens and off-track increments are harder to produce and less impactful. In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.
+The fundamental idea of BDD is to focus on the behavior of a software system while moving the solutions to the above mentioned problems, specification and QA, closer together[@nagy2018discovery, p.3]. Thereby, the feedback cycle shortens and off-track increments are harder to produce and less impactful. In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.
 
-** Disclaimer ** I separate the terms for software engineering and QA, but it can be the same people. The focus doing that is more on the discipline itself.
+** Disclaimer ** In this document I separate the terms for software engineering and QA, but it can be the same people practitioning them. The focus is on the discipline itself.
 
 ## Why Behavior-driven development?
-The annual "State of Agile" Report started 2007 and provides since then insights into the application of agile methodologies and practices over a large range of different companies worldwide.
+The annual "State of Agile" report started 2007 and since then provides insights into the application of agile methodologies and practices over a large range of different companies worldwide.
 For the 14th State of Agile Report 1121 surveys were collected [@stateOfAgile14, p.5] and for the Report from 2015 even 3880 surveys where collected[@stateOfAgile10, p.2]. The survey is handed out to agile practicioners and executives. It is aimed to be representative in terms of localization, company size and industries and it exists since more than 12 years, therefore it might contain a convincing insight into the employment of BDD, at least among the companies that participated in the survey. This table of percental BDD employment per year shows a significantly growing application of BDD, especially since 2015 BDD appears to gain relevance each year except 2019.[@nagy2018discovery, p.9f]
 
 |      Report       | BDD used by |    BDD listed as     |
