@@ -199,7 +199,7 @@
 <li><a href="#collaboration">Collaboration</a></li>
 <li><a href="#business-value">Business value</a></li>
 <li><a href="#documentation">Documentation</a></li>
-<li><a href="#behavior-and-tests">Behavior and Tests</a></li>
+<li><a href="#behavioral-tests">Behavioral Tests</a></li>
 <li><a href="#compatibility">Compatibility</a></li>
 <li><a href="#limitations">Limitations</a></li>
 </ol></li>
@@ -386,7 +386,7 @@ Conclusion: The requirement workshop is executed repeatedly and involves busines
 // TODO: Dev Team is invited to business participation. // TODO: Find out who said “Devs have to become somewhat of domain experts.”<br />
 // TODO: Find out, if a deeper business understanding increases the motivation of the dev team.</p>
 <h3 id="business-value">Business value</h3>
-<p>The key motivation to time and money into a software is it’s business value.<br />
+<p>The key motivation to time and money into a software is its business value.<br />
 // TODO: Find a good general definition of business value<br />
 BDD attempts to increase business value of a product mainly through these 3 aspects: 1. Short feedback loops 2. Focus on specification 3. Quality</p>
 <p>Short feedback loops on the functional level have several impactful advantages. They open the opportunity to have early increments of a system tested in the field. This is not only useful in terms of risk management, but also constantly challenges the specification. If a new feature is introduced that barely anyone uses, maybe it was a bad idea and should be removed (or maybe not, it depends). It is easier to be brave enough for (functional) experiments, if not the hole project is on the line. And this enables innovation.</p>
@@ -398,17 +398,14 @@ BDD attempts to increase business value of a product mainly through these 3 aspe
 <p>It is easier to start with a concrete example before getting abstract (by reading often times refactored code). An example for this can be found in the world of developmental psychology: For young babies objects like toys ‘exist’ only if they can be seen (or touched etc). As soon as the toy disappears, for example behind someones back, it is ‘gone.’ Over time, these young humans become able to the sense of abstraction, which means they start understanding that there is an object, even if it cannot be seen, it still exists <span class="citation" data-cites="objectPermanenceWiki">(<span>“Object Permanence,”</span> n.d.)</span>. In this example, the new software engineer is like the baby in terms of domain knowledge. Examples can be understood by far easier than the high abstraction of existing software, because the sense for abstraction needs to evolve first. If the given team uses BDD, there exists a path into developing the required sense of abstraction, which is by deeply understanding the specification by example.</p>
 <p>This is just an example(!) of what concrete documentation could be useful for. There could be people in different roles, inside or outside the team, that are interested in the behavior of a system. As time goes by, people could forget some aspects of the behavior of the system, or a test could fail and can be read again to make a better decision on how to move on.</p>
 <p>// TODO: Living documentation</p>
-<h3 id="behavior-and-tests">Behavior and Tests</h3>
-<p>// TODO If a BT fails -&gt; Problem!<br />
-// TODO If a not BT fails -&gt; Problem?<br />
-// TODO Do passing tests mean anything in terms of business value?<br />
-// TODO Is it more useful to have higher level tests than lower level unit tests? Are both testing levels required? Examples?<br />
-// TODO Having BDD tests avoid doing “too much” and “too less” and enforces “just right”</p>
+<h3 id="behavioral-tests">Behavioral Tests</h3>
+<p>If an unit test of an arbitrary software system breaks after changing some lines of code, it can mean different things. It could mean, that the system is now broken and nothing will work, or that some very small piece of the system does not work properly. It could even mean, that everything just works fine, and the test was covering unused code (and therefore should have been deleted). So the consequence of a broken unit test is varies between nothing works and everything works, and that is in its nature. A lot of decisions have to be made when it comes to writing unit tests: the scope, the intended coverage (based on a coverage measurement method, that needs to be defined), the name, size and focus of a test, the required mocks in order to have the test running. The list goes on. For this multidimensional and highly complex discipline, a lot of expertise and discipline needs to be maintained in order to keep it over the timespan of a long lasting project.</p>
+<p>When executable specification from a BDD environment is considered as ‘tests,’ these aspects change (I call them behavioral tests in this chapter). If a behavioral test fails, it is exactly clear to business people, software engineers and QA which aspect of the system stopped working by introducing a change, and which didn’t. The failing test does not provide any information or detail on why exactly something broke. One further advantage of behavioral tests (in comparison to unit tests) is, that they do not need to be changed upon refactoring, as long as the refactoring does not imply any functional changes. The way a problem is solved could be changed without the behavioral test ‘noticing’ it, therefore actually doing a refactoring is embraced. Moreover, having a behavioral test in mind while development helps to focus on the actual requirements and prevents software engineers from doing ‘too much’ in the same way, as it prevents them from doing ‘too little.’</p>
+<p>For the mentioned reasons, behavioral tests do not replace unit tests, and there is no need to decide between those two. The test frameworks should rather complement each other. Sometimes it is important to have unit tests in order to cover the exact way a problem is solved, or some edge cases, that are hard to produce from a behavioral level. Sometimes it is enough to cover what needs to work, and the exact details of how that works is not relevant. In that case, the behavioral tests should be leveraged into a useful testing framework from the perspective of quality assurance.</p>
 <h3 id="compatibility">Compatibility</h3>
-<p>// TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc</p>
+<p>// TODO: Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc</p>
 <h3 id="limitations">Limitations</h3>
-<p>// TODO Qualitative limitations<br />
-// TODO Quantitative proof that BDD works?</p>
+<p>// TODO: Qualitative limitations</p>
 <h2 id="approaching-bdd">Approaching BDD</h2>
 <p>// TODO: From the industry point of view: How can BDD be approached?<br />
 // TODO: Is it possible to start with tech only or business only adoption, or does it have to happen simultaniously?<br />

@@ -28,7 +28,7 @@ csl: chicago-author-date.csl
    1. [Collaboration](#collaboration)
    2. [Business value](#business-value)
    3. [Documentation](#documentation)
-   4. [Behavior and Tests](#behavior-and-tests)
+   4. [Behavioral Tests](#behavioral-tests)
    5. [Compatibility](#compatibility)
    6. [Limitations](#limitations)
 7. [Approaching BDD](#approaching-bdd)
@@ -199,7 +199,7 @@ The most obvious advantage is stated as a principle above already: The disciplin
 // TODO: Find out, if a deeper business understanding increases the motivation of the dev team.
 
 ### Business value
-The key motivation to time and money into a software is it's business value.  
+The key motivation to time and money into a software is its business value.  
 // TODO: Find a good general definition of business value  
 BDD attempts to increase business value of a product mainly through these 3 aspects:
 1. Short feedback loops
@@ -223,19 +223,18 @@ This is just an example(!) of what concrete documentation could be useful for. T
 
 // TODO: Living documentation
 
-### Behavior and Tests
-// TODO If a BT fails -> Problem!  
-// TODO If a not BT fails -> Problem?  
-// TODO Do passing tests mean anything in terms of business value?  
-// TODO Is it more useful to have higher level tests than lower level unit tests? Are both testing levels required? Examples?  
-// TODO Having BDD tests avoid doing "too much" and "too less" and enforces "just right"  
+### Behavioral Tests
+If an unit test of an arbitrary software system breaks after changing some lines of code, it can mean different things. It could mean, that the system is now broken and nothing will work, or that some very small piece of the system does not work properly. It could even mean, that everything just works fine, and the test was covering unused code (and therefore should have been deleted). So the consequence of a broken unit test is varies between nothing works and everything works, and that is in its nature. A lot of decisions have to be made when it comes to writing unit tests: the scope, the intended coverage (based on a coverage measurement method, that needs to be defined), the name, size and focus of a test, the required mocks in order to have the test running. The list goes on. For this multidimensional and highly complex discipline, a lot of expertise and discipline needs to be maintained in order to keep it over the timespan of a long lasting project.  
+
+When executable specification from a BDD environment is considered as 'tests', these aspects change (I call them behavioral tests in this chapter). If a behavioral test fails, it is exactly clear to business people, software engineers and QA which aspect of the system stopped working by introducing a change, and which didn't. The failing test does not provide any information or detail on why exactly something broke. One further advantage of behavioral tests (in comparison to unit tests) is, that they do not need to be changed upon refactoring, as long as the refactoring does not imply any functional changes. The way a problem is solved could be changed without the behavioral test 'noticing' it, therefore actually doing a refactoring is embraced. Moreover, having a behavioral test in mind while development helps to focus on the actual requirements and prevents software engineers from doing 'too much' in the same way, as it prevents them from doing 'too little'.
+
+For the mentioned reasons, behavioral tests do not replace unit tests, and there is no need to decide between those two. The test frameworks should rather complement each other. Sometimes it is important to have unit tests in order to cover the exact way a problem is solved, or some edge cases, that are hard to produce from a behavioral level. Sometimes it is enough to cover what needs to work, and the exact details of how that works is not relevant. In that case, the behavioral tests should be leveraged into a useful testing framework from the perspective of quality assurance. 
 
 ### Compatibility
-// TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
+// TODO: Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
 
 ### Limitations
-// TODO Qualitative limitations  
-// TODO Quantitative proof that BDD works?
+// TODO: Qualitative limitations  
 
 ## Approaching BDD
 // TODO: From the industry point of view: How can BDD be approached?  
