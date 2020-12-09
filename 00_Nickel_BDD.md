@@ -33,7 +33,7 @@ csl: chicago-author-date.csl
    5. [Compatibility](#compatibility)
    6. [Limitations](#limitations)
 7. [Approaching BDD](#approaching-bdd)
-8. [Conclusion](#conclusion)
+8. [TODO: Conclusion](#todo-conclusion)
 9. [References](#references)
 
 ## Introduction
@@ -223,14 +223,13 @@ This is just an example(!) of what concrete documentation could be useful for. T
 // TODO If a not BT fails -> Problem?  
 // TODO Do passing tests mean anything in terms of business value?  
 // TODO Is it more useful to have higher level tests than lower level unit tests? Are both testing levels required? Examples?  
-  
 // TODO Having BDD tests avoid doing "too much" and "too less" and enforces "just right"  
 
 ### Compatibility
 // TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
 
 ### Limitations
-// TODO Qualitative limitations
+// TODO Qualitative limitations  
 // TODO Quantitative proof that BDD works?
 
 ## Approaching BDD
@@ -252,10 +251,9 @@ This is just an example(!) of what concrete documentation could be useful for. T
 7. Have discussions between people from specification, development and QA (3 Amigos)
 8. to be continued..
 
+## TODO: Conclusion
+TODO: Should everyone do BDD?
+
 ---
-
-## Conclusion
-- Should everyone do BDD?
-
 
 ## References
