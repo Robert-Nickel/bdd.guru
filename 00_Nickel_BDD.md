@@ -194,8 +194,8 @@ The most obvious advantage is stated as a principle above already: The disciplin
 // TODO: Dev Team is invited to business participation. Find out who said "Devs have to become somewhat of domain experts". Find out, if a deeper business understanding increases the motivation of the dev team.
 
 ### Business value
-The key motivation to time and money into a software is it's business value.
-// TODO: Find a good general definition of business value
+The key motivation to time and money into a software is it's business value.  
+// TODO: Find a good general definition of business value  
 BDD attempts to increase business value of a product mainly through these 3 aspects:
 1. Short feedback loops
 2. Focus on specification
