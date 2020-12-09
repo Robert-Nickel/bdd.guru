@@ -25,13 +25,13 @@ csl: chicago-author-date.csl
    2. [Three amigos/ Specification workshop / Discovery workshop](#three-amigos-specification-workshop--discovery-workshop)
    3. [TODO: 5 Whys](#todo-5-whys)
    4. [The Tools of BDD](#the-tools-of-bdd)
-6. [Critical evaluation of BDD](#critical-evaluation-of-bdd)
-   1. [Advantages](#advantages)
-      1. [Collaboration](#collaboration)
-      2. [TODO: Business value](#todo-business-value)
-      3. [Documentation](#documentation)
-      4. [Behavior and Tests](#behavior-and-tests)
-   2. [Limitations](#limitations)
+6. [Evaluation of BDD](#evaluation-of-bdd)
+   1. [Collaboration](#collaboration)
+   2. [TODO: Business value](#todo-business-value)
+   3. [Documentation](#documentation)
+   4. [Behavior and Tests](#behavior-and-tests)
+   5. [Compatibility](#compatibility)
+   6. [Limitations](#limitations)
 7. [Approaching BDD](#approaching-bdd)
 8. [Conclusion](#conclusion)
 9. [References](#references)
@@ -186,20 +186,15 @@ Depending on the application of the software system, step definitions can have a
 
 Although the usage of a BDD tool is recommended, it is not required. Tools support the application of the principles, therefore a deep understanding of the principles is a prerequisite to productive usage of tools. "One typical mistake is to see BDD as a tool-thing. BDD is primarily about collabo- ration and domain discovery; any “BDD tool” can be only useful in supporting this process."[@nagy2018discovery, p. 4].
 
-## Critical evaluation of BDD
-// TODO: get rid of this chapter. Dont use 4th level captions.  
-
-In this chapter I will do a critical evaluation of BDD, by having deeper look at advantages (apart from the obvious ones) and disadvantages (in terms of compatibility with other frameworks and ease of application) for different areas that are affected by using BDD.
-
-### Advantages
-#### Collaboration
+## Evaluation of BDD
+### Collaboration
 The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language[@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
 // TODO: Dev Team is invited to business participation. Find out who said "Devs have to become somewhat of domain experts". Find out, if a deeper business understanding increases the motivation of the dev team.
 
-#### TODO: Business value
+### TODO: Business value
 // TODO: How is the business value affected by using BDD?
 
-#### Documentation
+### Documentation
 Imagine a software engineer joining a team which is developing a poker software for more than 3 months already. One of his first onboarding tasks is to read the code to understand, what the system does. He has to read the most abstract formulation of a set of rules that describe the poker variant, in order to understand what problem the system solves. When he asks questions to fellow team members, they are likely to explain the rules by examples like: 
 
     Imagine you are playing poker with two friends. After the river is revealed, it is king of clubs, the last betting round starts and the small blind checks to you. Now you have the options to either check or raise to the next player. But since you made your broadway, and the other players are more passive players, the question is more towards how much you are going to raise.
@@ -210,7 +205,7 @@ This is just an example(!) of what concrete documentation could be useful for. T
 
 // TODO: Living documentation
 
-#### Behavior and Tests
+### Behavior and Tests
 // TODO If a BT fails -> Problem!  
 // TODO If a not BT fails -> Problem?  
 // TODO Do passing tests mean anything in terms of business value?  
@@ -218,13 +213,14 @@ This is just an example(!) of what concrete documentation could be useful for. T
   
 // TODO Having BDD tests avoid doing "too much" and "too less" and enforces "just right"  
 
+### Compatibility
+TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
 
 ### Limitations
 TODO Qualitative limitations
 TODO Quantitative proof that BDD works?
-TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
 
-## Approaching BDD 
+## Approaching BDD
 // TODO: From the industry point of view: How can BDD be approached?  
 // TODO: Is it possible to start with tech only or business only adoption, or does it have to happen simultaniously?  
 // TODO: Different layers of adoption
