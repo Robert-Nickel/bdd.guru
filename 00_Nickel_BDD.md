@@ -27,7 +27,7 @@ csl: chicago-author-date.csl
    4. [The Tools of BDD](#the-tools-of-bdd)
 6. [Evaluation of BDD](#evaluation-of-bdd)
    1. [Collaboration](#collaboration)
-   2. [TODO: Business value](#todo-business-value)
+   2. [Business value](#business-value)
    3. [Documentation](#documentation)
    4. [Behavior and Tests](#behavior-and-tests)
    5. [Compatibility](#compatibility)
@@ -50,6 +50,8 @@ Sometimes people think that software works in a certain way but it doesn't. Whil
 The effects of these problems need to be discovered. In a waterfall-based approach the feedback cycle closes only after an increment went through specification, implementation and quality assurance, which means, that if any increment went off track, it is discovered at a late point in time.
 
 The fundamental idea of BDD is to focus on the behavior of a software system while moving the solutions to the above mentioned problems, specification and quality assurance, closer together.[@nagy2018discovery, p.3] Thereby, the feedback cycle shortens and off-track increments are harder to produce and less impactful. In this essay I want to elaborate on how BDD leverages this idea into building sustainable software, which principles and tools it uses to do so and to what extent it can be assumed that BDD works.
+
+** Disclaimer ** I separate the terms for software engineering and QA, but it can be the same people. The focus doing that is more on the discipline itself.
 
 ## Why Behavior-driven development?
 The annual "State of Agile" Report started 2007 and provides since then insights into the application of agile methodologies and practices over a large range of different companies worldwide.
@@ -191,8 +193,19 @@ Although the usage of a BDD tool is recommended, it is not required. Tools suppo
 The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department's turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language[@evans2004ddd, p. 32ff] evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.
 // TODO: Dev Team is invited to business participation. Find out who said "Devs have to become somewhat of domain experts". Find out, if a deeper business understanding increases the motivation of the dev team.
 
-### TODO: Business value
-// TODO: How is the business value affected by using BDD?
+### Business value
+The key motivation to time and money into a software is it's business value.
+// TODO: Find a good general definition of business value
+BDD attempts to increase business value of a product mainly through these 3 aspects:
+1. Short feedback loops
+2. Focus on specification
+3. Quality
+
+Short feedback loops on the functional level have several impactful advantages. They open the opportunity to have early increments of a system tested in the field. This is not only useful in terms of risk management, but also constantly challenges the specification. If a new feature is introduced that barely anyone uses, maybe it was a bad idea and should be removed (or maybe not, it depends). It is easier to be brave enough for (functional) experiments, if not the hole project is on the line. And this enables innovation.  
+
+Focus on the specification means in other terms focus on the business value, because the specification is basically the assumed definition of business value. Each scenario could contain a business value positive message in the outcome like 'Given... When ...Then it would help me a lot, if ...'. Every participant, irrespective of the role, is thinking of the specification as a central aspect of the product. To make this more concrete: A software engineer has to focus on the scenarios when implementing tests or the actual software. Every QA person has the specification in mind when assuring its quality. Every business person has access to existing behavior in order to make good decisions for additional behavior. By focussing onto the specification, which is the assumed definition of the business value, it is assured that the 10th rule of the agile principles: "Simplicity–the art of maximizing the amount of work not done–is essential."[@agilePrinciples] is followed.  
+
+Lastly, about the qualities impact on business value: The business value from a technical perspective is not only about the 'what', but also the way a system is implemented 'the how'. Doing it in a sustainable way is hard to achieve in projects without a solid testing framework. For a good testing framework, some good decisions have to be made, for example the scope of the tests. Since BDD defines exactly this already, this cannot be decided wrong. Some additional aspects for the testing indeed still can be decided wrong: Those about additional, lower level tests (that do not directly cover behavior but implementation details) and second those about implementing the test definitons right. Its almost impossible to miss out on behavioral tests in a BDD environment, and everyone can see what doesn't work if such a test fails. All this enforces the development team to deliver high quality as a default, and this is an assumed to be given attribute of any specification.
 
 ### Documentation
 Imagine a software engineer joining a team which is developing a poker software for more than 3 months already. One of his first onboarding tasks is to read the code to understand, what the system does. He has to read the most abstract formulation of a set of rules that describe the poker variant, in order to understand what problem the system solves. When he asks questions to fellow team members, they are likely to explain the rules by examples like: 
@@ -214,11 +227,11 @@ This is just an example(!) of what concrete documentation could be useful for. T
 // TODO Having BDD tests avoid doing "too much" and "too less" and enforces "just right"  
 
 ### Compatibility
-TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
+// TODO Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc  
 
 ### Limitations
-TODO Qualitative limitations
-TODO Quantitative proof that BDD works?
+// TODO Qualitative limitations
+// TODO Quantitative proof that BDD works?
 
 ## Approaching BDD
 // TODO: From the industry point of view: How can BDD be approached?  
