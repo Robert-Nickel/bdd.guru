@@ -143,15 +143,18 @@ The goal of BDD is to engineer high-quality working software (top right). To ge
 ### Specification - a Contract?
 The specification is a contract between the business and the implementation.
 Its documenting the behavior if the system, tests it automatically and illustrates it.
+// TODO: Write this chapter.
 
 ### Roles and Responsibilities
-Do the roles change?
-  - Dev team is invited to participate in business discussions.
-   - Uncle Bob says, that software engineers need to become domain experts (to some degree).
-  - Business people are pushed towards using a more formalized language than usually
-What about responsibility segregation?
+There are three main roles in BDD: business experts (also referred to as business people), software engineers (which form the development team) and quality assurance people/testers. The roles themselves are neither new nor unique to BDD, but by having people from all 3 disciplines collaborating together, they get a better understanding of each others roles rather than only the interfaces between the roles.
+
+![](images/roles.png)
+[Figure 2]  
+
+Moreover, the 'borders' of the responsibility per roles blurs. Software engineers and testers are invited to participate in the specification process and business experts are invited to contribute to the formal specification which is executable test code. This increases empathy and motivation, because everyone is involved in the product, not only in a specific discipline.
 
 ## How to do BDD right
+This chapter describes some practicle tricks and concrete practices that help applying BDD. The do follow the principles of BDD but are no principles. Moreover, these techniques might evolve with a higher speed than the principles themselves. 
 
 ### How to write good scenarios/examples
 Since scenarios are examples that are formalized by a business readable DSL, but are contentwise similar, they are considered synonym for the following section. In a Cucumber.io article [@Rose2019Brief], Seb Rose describes the traits of a good scenario with the combined acronym BRIEF.  
@@ -169,7 +172,7 @@ Using the (1) business language in scenarios aims to keep the business people en
 The meeting, in which business experts, software engineers and QA collaborate to discover the specification, is called 'Three Amigos' [@agileAllianceThreeAmigos], 'specification workshop', 'backlog refinement' or 'requirement workshop' [@nagy2018discovery, p. 24]. The meeting aims to discuss and explore stories brought in by the business representants, and to illustrate it with concrete examples. Although the length of such a meeting is not specified in general, it applies that the more frequently it is done, the shorter it can be. The method called 'Example Mapping' [@Wynne2015Example] can provide structure and guidance through the process. It basically defines four kinds of entities: examples, rules, questions and user stories. Starting with a user story, written on a yellow index card, the already known rules for it are written on blue index cards right below. For each rule, examples are written on green index cards while questions, that cannot be answered within the meeting, materialize on red index cards. 
 
 ![](images/example_mapping.png)
-[Figure 2, [@Wynne2015Example]]
+[Figure 3, [@Wynne2015Example]]
 
 The cards are written as the conversation unfolds, and thereby "build up a visual representation on the table in front of us reflecting back our current understanding of the story" [@Wynne2015Example]. Alternatively it is possible to write the specification directly in Gherkin language in the meeting, but it might not be fast enough for the discussion and cause distraction.  
 Conclusion: The requirement workshop is executed repeatedly and involves business people, software engineers and QA. The workshop aims to zoom in and discuss specification in much detail.
