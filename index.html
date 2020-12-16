@@ -185,7 +185,7 @@
 <ol type="1">
 <li><a href="#examples-and-business-rules">Examples and Business Rules</a></li>
 <li><a href="#scenarios-the-gherkin-language-and-working-software">Scenarios, the Gherkin Language and Working Software</a></li>
-<li><a href="#specification---a-contract">Specification - a Contract?</a></li>
+<li><a href="#specification---a-contract">Specification - a Contract</a></li>
 <li><a href="#roles-and-responsibilities">Roles and Responsibilities</a></li>
 </ol></li>
 <li><a href="#how-to-do-bdd-right">How to do BDD right</a>
@@ -227,6 +227,7 @@
 <tr class="header">
 <th style="text-align: center;">Report</th>
 <th style="text-align: center;">BDD used by</th>
+<th style="text-align: center;">Participants</th>
 <th style="text-align: center;">BDD listed as</th>
 </tr>
 </thead>
@@ -234,61 +235,73 @@
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile3">(<span>“State of Agile 3rd Report”</span> 2009)</span></td>
 <td style="text-align: center;">7%</td>
+<td style="text-align: center;">2319</td>
 <td style="text-align: center;">agile method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile4">(<span>“State of Agile 4th Report”</span> 2010)</span></td>
 <td style="text-align: center;">None</td>
+<td style="text-align: center;">2570</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile5">(<span>“State of Agile 5th Report”</span> 2011)</span></td>
 <td style="text-align: center;">9%</td>
+<td style="text-align: center;">4770</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile6">(<span>“State of Agile 6th Report”</span> 2012)</span></td>
 <td style="text-align: center;">9%</td>
+<td style="text-align: center;">6042</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile7">(<span>“State of Agile 7th Report”</span> 2013)</span></td>
 <td style="text-align: center;">10%</td>
+<td style="text-align: center;">4048</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile8">(<span>“State of Agile 8th Report”</span> 2014)</span></td>
 <td style="text-align: center;">12%</td>
+<td style="text-align: center;">3501</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile9">(<span>“State of Agile 9th Report”</span> 2015)</span></td>
 <td style="text-align: center;">9%</td>
+<td style="text-align: center;">3925</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile10">(<span>“State of Agile 10th Report”</span> 2016)</span></td>
 <td style="text-align: center;">10%</td>
+<td style="text-align: center;">3880</td>
 <td style="text-align: center;">agile technique</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile11">(<span>“State of Agile 11th Report”</span> 2017)</span></td>
 <td style="text-align: center;">16%</td>
+<td style="text-align: center;">“thousands”</td>
 <td style="text-align: center;">engineering practice</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile12">(<span>“State of Agile 12th Report”</span> 2018)</span></td>
 <td style="text-align: center;">17%</td>
+<td style="text-align: center;">1492</td>
 <td style="text-align: center;">engineering practice</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile13">(<span>“State of Agile 13th Report”</span> 2019)</span></td>
 <td style="text-align: center;">22%</td>
+<td style="text-align: center;">1319</td>
 <td style="text-align: center;">engineering practice</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="citation" data-cites="stateOfAgile14">(<span>“State of Agile 14th Report”</span> 2020)</span></td>
 <td style="text-align: center;">19%</td>
+<td style="text-align: center;">1121</td>
 <td style="text-align: center;">engineering practice</td>
 </tr>
 </tbody>
@@ -345,8 +358,8 @@ Examples</code></pre>
 <p>Conclusively, a scenario is an example that is formalized by a business readable DSL like the Gherkin language. The working software is the formalization of the business rules, written in a (usually high-level) programming language like Scala, Java, C# etc. And just like the examples illustrate the business rules, scenarios illustrate the software itself. Before getting closer into the tips, tricks, tools, do and don’ts, I want to conclude this very key principle of BDD.</p>
 <p><img src="images/process_illustration_formalization_bdd.png" /> [Figure 1]</p>
 <p>The goal of BDD is to engineer high-quality working software (top right). To get there, we start with examples, explained by business people and discussed with all roles that engage in the process. These are inter-humanly communicated behaviors that do not need to fulfill a highly formalized structure, other than describing the context, the action and the outcome. They get formalized with a business readable DSL (bottom right) and abstracted to business rules (top left). Both steps are taken in order to get to the top right corner of the image without disconnecting the specification and the actual software. This principle is executed repeatedly in very short feedback cycles, so that it proves the right understanding of the specification (which is the implementation) and having the right specification in place. The right software is built the right way.</p>
-<h3 id="specification---a-contract">Specification - a Contract?</h3>
-<p>The specification is a contract between the business and the implementation. Its documenting the behavior if the system, tests it automatically and illustrates it. // TODO: Write this chapter.</p>
+<h3 id="specification---a-contract">Specification - a Contract</h3>
+<p>In a waterfall world, the specification is not only specifying the functional aspects of a software system. It is also the main communication channel between business experts and software engineers and QA. Now, in a BDD world, this changes fundamentally. All three disciplines are involved in the creation, exploration, discussion and formalization of the specification, which makes it an agreement or a contract. Concerns from all disciplines can be stated early. If no concerns arise or all concerns can be resolved, the business experts can be more confident about the functional consistency, technical feasibility and (automated) testibility. The chance of misinterpretation is reduced, while every discipline is protected by the formalization of the specification. If against all odds something was implemented the wrong way, the specification will highlight this to the development team quickly, and if it doesn’t, then people from QA and business will.</p>
 <h3 id="roles-and-responsibilities">Roles and Responsibilities</h3>
 <p>There are three main roles in BDD: business experts (also referred to as business people), software engineers (which form the development team) and quality assurance people/testers. The roles themselves are neither new nor unique to BDD, but by having people from all 3 disciplines collaborating together, they get a better understanding of each others roles rather than only the interfaces between the roles.</p>
 <p><img src="images/roles.png" /> [Figure 2]</p>
@@ -386,12 +399,9 @@ Conclusion: The requirement workshop is executed repeatedly and involves busines
 <p>Although the usage of a BDD tool is recommended, it is not required. Tools support the application of the principles, therefore a deep understanding of the principles is a prerequisite to productive usage of tools. “One typical mistake is to see BDD as a tool-thing. BDD is primarily about collaboration and domain discovery; any “BDD tool” can be only useful in supporting this process." <span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 4)</span>.</p>
 <h2 id="evaluation-of-bdd">Evaluation of BDD</h2>
 <h3 id="collaboration">Collaboration</h3>
-<p>The most obvious advantage is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborates directly when a team applies BDD. The development department’s turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language <span class="citation" data-cites="evans2004ddd">(Evans 2004, 32ff)</span> evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. And by having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more.<br />
-// TODO: Dev Team is invited to business participation. Find out, if a deeper business understanding increases the motivation of the dev team.</p>
+<p>The most obvious advantage of applying BDD is stated as a principle above already: The disciplines of specification and QA, which are in waterfall-based world known as being far apart from each other, collaborate directly. The development department’s turn is (time- and communicationwise) not between specification and QA anymore, it is now collaborating with both and helps them to collaborate with each other. By working together repeatedly when writing executable specification, thus by putting the behavior of the system in the focus of everyone, an ubiquitous language <span class="citation" data-cites="evans2004ddd">(Evans 2004, 32ff)</span> evolves naturally, which helps the team to communicate more effectively and avoids misunderstandings. By having a language in place, that enables the business people to read a formal specification, the chance for misunderstandings is reduced even more. Moreover, by inviting QA and development to participate in the specification process, the identification with the product as a whole is increased, which influences the performance positively.</p>
 <h3 id="business-value">Business value</h3>
-<p>The key motivation to time and money into a software is its business value.<br />
-// TODO: Find a good general definition of business value<br />
-BDD attempts to increase business value of a product mainly through these 3 aspects: 1. Short feedback loops 2. Focus on specification 3. Quality</p>
+<p>The key motivation to invest time and money into a software is its business value, which is the value of the automated problem solving that a software system provides. BDD attempts to increase business value of a product mainly through these 3 aspects: 1. Short feedback loops 2. Focus on specification 3. Quality</p>
 <p>Short feedback loops have several impactful advantages on the functional level. They open the opportunity to have early increments of a system tested in the field. This is not only useful in terms of risk management, but also constantly challenges the specification. If a new feature was introduced that barely anyone uses, maybe it was a bad idea and should be removed (or maybe not, it depends). It is easier to be brave enough for (functional) experiments, if not the hole project is on the line. And this enables innovation.</p>
 <p>Focus on the specification means in other terms focus on the business value, because the specification is basically the assumed definition of business value. Each scenario could contain a business value positive message in the outcome like ‘Given… When …Then it would help me a lot, if ….’ Every participant, irrespective of the role, is thinking of the specification as a central aspect of the product. To make this more concrete: A software engineer has to focus on the scenarios when implementing tests or the actual software. Every QA person has the specification in mind when assuring its quality. Every business person has access to existing behavior in order to make good decisions for additional behavior. By focussing onto the specification, which is the assumed definition of the business value, it is assured that the 10th rule of the agile principles: “Simplicity–the art of maximizing the amount of work not done–is essential.” <span class="citation" data-cites="agilePrinciples">(Kent Beck 2001)</span> is followed.</p>
 <p>To what extent does quality influence the business value? The business value from a technical perspective is not only about the ‘what,’ but also the way a system has implemented the ‘how.’ Doing it in a sustainable way is hard to achieve in projects without a solid testing framework. For a good testing framework, some good decisions have to be made, for example the scope of the tests. Since BDD defines exactly this already, this cannot be decided wrong. Some additional aspects for the testing indeed still can be decided wrong: Those about additional, lower level tests (that do not directly cover behavior but implementation details) and second those about implementing the test definitons right. Its almost impossible to miss out on behavioral tests in a BDD environment, and everyone can see what doesn’t work if such a test fails. All this enforces the development team to deliver high quality as a default, and this is an assumed to be given attribute of any specification.</p>
@@ -405,22 +415,21 @@ BDD attempts to increase business value of a product mainly through these 3 aspe
 <p>When executable specification from a BDD environment is considered as ‘tests,’ these aspects change (I call them behavioral tests in this chapter). If a behavioral test fails, it is exactly clear to business people, software engineers and QA which aspect of the system stopped working by introducing a change, and which didn’t. The failing test does not provide any information or detail on why exactly something broke. One further advantage of behavioral tests (in comparison to unit tests) is, that they do not need to be changed upon refactoring, as long as the refactoring does not imply any functional changes. The way a problem is solved could be changed without the behavioral test ‘noticing’ it, therefore actually doing a refactoring is embraced. Moreover, having a behavioral test in mind while development helps to focus on the actual requirements and prevents software engineers from doing ‘too much’ in the same way, as it prevents them from doing ‘too little.’</p>
 <p>For the mentioned reasons, behavioral tests do not replace unit tests, and there is no need to decide between those two. The test frameworks should rather complement each other. Sometimes it is important to have unit tests in order to cover the exact way a problem is solved, or some edge cases, that are hard to produce from a behavioral level. Sometimes it is enough to cover what needs to work, and the exact details of how that works is not relevant. In that case, the behavioral tests should be leveraged into a useful testing framework from the perspective of quality assurance.</p>
 <h3 id="compatibility">Compatibility</h3>
-<p>// TODO: Compatibility with other common frameworks such as Scrum, Kanban, Less, Safe etc</p>
+<p>BDD requires an agile mindset in order to be executed properly. The reason is mainly it’s reliance on collaboration and short iterations. Scrum (as an example) is a good fit for the principles of BDD <span class="citation" data-cites="nagy2018discovery">(Nagy and Rose 2018, 59f)</span>. The backlog refinement and the planning are good meetings to do a requirements workshop. The short iterations of around two weeks, in which the development team has a relatively small stack of stories and their details in it’s forehead, match well with the invitation to participate in the specification definition. Moreover, small stories in Scrum match well with small scenarios in BDD.</p>
 <h3 id="limitations">Limitations</h3>
-<p>// TODO: Qualitative limitations</p>
+<p>BDD is a tool, that has limitations just like any other tool. Moreover, it can be used for the good, or it can be exploited. BDD by itself is not as promising, if the required trust, direct communication or small team size are missing. For example: In a context, in which a specification workshop’s participants are not on an equal footing, then concerns might not arise early enough. The people need to be able to communicate bidirectional and hierarchy needs to be locked out of such meetings. This is just one example for a pitfall on the collaborational level, in more general terms: BDD and missing trust are contradictory.</p>
+<p>One example for a pitfall on the technical level is the wrong implementation of step definitions. The specification appears to be fulfilled, but it is not, which could lead to false confidence and eventually a broken version. Depending on the tools that are used, and if automated testing is applied, this might be more or less likely, but by definition the interface between the formalized specification and the implementation in a programming language is a critical thing.</p>
+<p>A third level of pitfalls is the duration of a project: If a project is known to be short living, all the overhead of teaching BDD to all participants, setting up the technical and organizational framework etc. might not be worth the effort.</p>
 <h2 id="approaching-bdd">Approaching BDD</h2>
-<p>// TODO: From the industry point of view: How can BDD be approached?<br />
-// TODO: Is it possible to start with tech only or business only adoption, or does it have to happen simultaniously?<br />
-// TODO: Different layers of adoption - Consider: https://dzone.com/articles/the-five-stages-of-bdd-and-agile-adoption - What are the important understandings of each layer? - Which roles are involved &amp; affected? What about the motivation of each of those roles? - Is it possible to quantify the adoption of BDD in terms of those layers? // TODO: Consider defining somewhat of a maturity check of the application of BDD. It might reach from the simple application of its tools to a deep understanding of the principles and the ability to understand the perspectives on BDD from all the different roles (like business people, testers, engineers etc.)</p>
+<p>This chapter is hands-on thinking about the question, how BDD can be approached in different contexts. In order to make steps, one needs to know, where he is first. Therefore I provide a list of steps that need to be taken towards a deep understanding and good execution of BDD. Each step has to be taken before getting to the next one.</p>
 <ol type="1">
-<li>Have a sense for QA inside the team</li>
-<li>Write automated tests within the development team</li>
-<li>Understand what different test levels are useful for (and what not)</li>
-<li>Consider readability and maintainability of written tests (e.g. by having small, focussed and isolated tests, using Given-When-Then structures etc.)</li>
-<li>Use the same or a similar language in the tests as in the specification documents</li>
-<li>Consider QA before specification is done</li>
-<li>Have discussions between people from specification, development and QA (3 Amigos)</li>
-<li>to be continued..</li>
+<li>Process improvement mindset: Everyone is interested in improvements of the way things go and humble enough to think critically about themselves.</li>
+<li>Sense for responsibility: Everyone wants to deliver a high quality product and is willing to go the extra mile for it, because they feel responsible for the product. Indicators for this happening can be a very intentional wording in the requirements, automated tests for the software and QA people who are happy finding a bug, because it doesn’t happen that often.</li>
+<li>Collaboration: This is the most important and central principle of BDD; Everyone involved seeks to collaborate with people from all disciplines on order to achieve the best possible product. Hierarchies, personal sensitivities and other barriers are resolved in order to get productive together.</li>
+<li>Specification agreement: The specification is the result of a collaborative discussion and not only a to-do list for the development team. People of each discipline participated in its creation and everyone agrees to it.</li>
+<li>Examples: Examples are used to illustrate, explain, understand and discuss rules, and their value for this is understood.</li>
+<li>Formalization: The specification is written in a formalized way that everyone agrees on. It could be the Gherkin language or similar. This formalization is used to test the software and as documentation.</li>
+<li>Executable specification: A tool is leveraged to execute the specification automatically and repeatedly.</li>
 </ol>
 <h2 id="todo-conclusion">TODO: Conclusion</h2>
 <p>// TODO: Should everyone do BDD?</p>
