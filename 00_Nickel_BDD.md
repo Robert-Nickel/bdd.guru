@@ -33,7 +33,6 @@ csl: chicago-author-date.csl
    6. [Limitations](#limitations)
 7. [Approaching BDD](#approaching-bdd)
 8. [Conclusion](#conclusion)
-   1. [References](#references)
 
 # Introduction
 The ultimate goal of every agile process is to turn work into value in a sustainable way. In the context of software engineering, humans automate solutions to problems by explaining them in much detail to machines, that do not have a common sense. Thus, the machines can solve the automatable problems and humans can focus on the not automatable tasks: To further explain the right solutions to problems to a machine in the right way. This discipline is software engineering. The result of explaining the right solution to a machine the right way is good software. In all of this there are (at least) two major problems:
@@ -250,5 +249,3 @@ This chapter is hands-on thinking about the question, how BDD can be approached 
 BDD is a methodology to encourage collaboration between different disciplines. It can be a tool to increase the business value and imporve the quality of a software system, shorten the feedback loops within the process and decrease the time to market. It is compatible with agile frameworks and consists of intuitive principles if an agile mindset is in place (i.e. in the heads of the participants) already. It requires some initial effort to learn the principles, the humbleness to get over hierarchies, accessibility to people from all departments and a decision on tooling. If these are given, BDD is a promising choice for a effective and sustainable software production process.
 
 ---
-
-## References
