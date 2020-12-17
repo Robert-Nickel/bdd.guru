@@ -104,7 +104,7 @@ Examples consist of a context, an action and an outcome. The context is the stat
 The examples alone cannot describe the behavior of a system sufficiently. Therefore, the business rules exist, which are the abstract description of the general problem. A business rule is what gets implemented in the software. When defining a business rule, it is often the case that it is deduced from a concrete situation (= example) in which the system should behave in a specific way.
 
 ### Scenarios, the Gherkin Language and Working Software
-A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL) [@Fowler2008Business] is used to describe behavioral descriptions of a software system. Business Readable DSLs enable "deep and rich communication channel between software development and the underlying domain" [@Fowler2008Business]. One example of such a DSL is the Gherkin language [@cucumberGherkinDocs], which has only very few (primary) keywords:
+A scenario is a formalized interpretation of an example. To formalize the example, a business readable domain specific language (DSL) [@Fowler2008Business] is used to describe behavioral descriptions of a software system. Business Readable DSLs enable "deep and rich communication channel between software development and the underlying domain" [@Fowler2008Business]. One example of such a DSL is the Gherkin language [@cucumberGherkinDocs], which has only very few primary keywords:
     
     Feature
     Rule (as of Gherkin 6)  
