@@ -32,7 +32,7 @@ csl: chicago-author-date.csl
    5. [Compatibility](#compatibility)
    6. [Limitations](#limitations)
 7. [Approaching BDD](#approaching-bdd)
-8. [TODO: Conclusion](#todo-conclusion)
+8. [Conclusion](#conclusion)
 9. [References](#references)
 
 ## Introduction
@@ -247,8 +247,8 @@ This chapter is hands-on thinking about the question, how BDD can be approached 
 6. Formalization: The specification is written in a formalized way that everyone agrees on. It could be the Gherkin language or similar. This formalization is used to test the software and as documentation.
 7. Executable specification: A tool is leveraged to execute the specification automatically and repeatedly.
 
-## TODO: Conclusion
-// TODO: Should everyone do BDD?
+## Conclusion
+BDD is a methodology to encourage collaboration between different disciplines. It can be a tool to increase the business value and imporve the quality of a software system, shorten the feedback loops within the process and decrease the time to market. It is compatible with agile frameworks and consists of intuitive principles if an agile mindset is in place (i.e. in the heads of the participants) already. It requires some initial effort to learn the principles, the humbleness to get over hierarchies, accessibility to people from all departments and a decision on tooling. If these are given, BDD is a promising choice for a effective and sustainable software production process.
 
 ---
 
