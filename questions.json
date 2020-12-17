@@ -1,0 +1,136 @@
+{
+    "fragen": [
+        {
+            "text": "Ist BDD gleichermaßen mit leicht- und schwergewichtigen Prozessmodellen kompatibel?",
+            "bereich": "BDD",
+            "level": "schwer",
+            "antworten": [
+                {
+                    "text": "Nein, denn BDD erfordert repititive Kollaboration über alle Disziplinen hinweg",
+                    "korrekt": true,
+                    "warum": "Es müssen regelmäßig Spezifikationsworkshops stattfinden, an denen sich Leute aus QA, Entwicklung und Business beteiligen. Ein iteratives Vorgehen wird entsprechend vorausgesetzt."
+                },
+                {
+                    "text": "Ja, allerdings müsste man hier und da kleinere Anpassungen machen.",
+                    "korrekt": false,
+                    "warum": "Mit kleinen Anpassungen ist es nicht getan. Das Grundprinzip von BDD steht in direktem Gegensatz zu den Grundprinzipien schwergewichtiger Prozessmodelle."
+                },
+                {
+                    "text": "Ja, BDD ist unabhängig vom darunterliegenden Prozessmodell.",
+                    "korrekt": false,
+                    "warum": "Mit kleinen Anpassungen ist es nicht getan. Das Grundprinzip von BDD steht in direktem Gegensatz zu den Grundprinzipien schwergewichtiger Prozessmodelle."
+                }
+            ]
+        },
+        {
+            "text": "Wofür steht BDD?",
+            "bereich": "BDD",
+            "level": "leicht",
+            "antworten": [
+                {
+                    "text": "Business-Driven Development",
+                    "korrekt": false,
+                    "warum": "Auch wenn Business Experten einen großen Einfluss auf den Prozess haben, steht das Verhalten (= Behavior) im Mittelpunkt der Spezifikation."
+                },
+                {
+                    "text": "Behavior-Driven Development",
+                    "korrekt": true,
+                    "warum": "Das Verhalten ist der kleinste gemeinsame Nenner zwischen den Disziplinen und wird formal zum Dreh- und Angelpunkt."
+                },
+                {
+                    "text": "Bedarfs-Driven Development",
+                    "korrekt": false,
+                    "warum": "Auch wenn Features den Bedürfnissen der Nutzer entsprechen sollten, steht das Verhalten von Features im Mittelpunkt."
+                }
+            ]
+        },
+        {
+            "text": "Wie wichtig ist die Nutzung eines angemessenen Tools für BDD?",
+            "bereich": "BDD",
+            "level": "mittel",
+            "antworten": [
+                {
+                    "text": "Essentiell. Ohne vernünftiges BDD Tool kann man kein vernünftiges BDD betreiben.",
+                    "korrekt": false,
+                    "warum": "Tools können helfen, sind aber nicht ausschlaggebend für die Anwendung von BDD. Der erste und wichtigere Schritt ist das Verständnis über die Prinzipien."
+                },
+                {
+                    "text": "Es kommt darauf an. Es ist nicht zwingend nötig ein Tool zu haben, die Prinzipien zu verstehen und anzuwenden ist wichtiger. Dennoch macht es häufig Sinn, sich ab einem gewissen Punkt auch damit zu beschäftigen, die verhaltenszentrierte Dokumentation ausführbar zu machen.",
+                    "korrekt": true,
+                    "warum": "Korrekt."
+                },
+                {
+                    "text": "Gar nicht. BDD Tooling ist nur eine Verkaufsmasche führender BDD Gurus. Echtes BDD findet in der Kollaboration zwischen Disziplinen statt.",
+                    "korrekt": false,
+                    "warum": "Auch wenn Toolentscheidungen zu einem gewissen grad Kaufentscheidungen sind, kann es durchaus sinnvoll sein, ein Tool einzusetzen, um die Anwendungstiefe von BDD zu erhöhen."
+                }
+            ]
+        },
+        {
+            "text": "Inwiefern ist BDD die Weiterentwicklung von TDD?",
+            "bereich": "BDD",
+            "level": "leicht",
+            "antworten": [
+                {
+                    "text": "Garnicht, es sind nur sehr ähnliche Abkürzungen.",
+                    "korrekt": false,
+                    "warum": "BDD war Dan North's Antwort auf Fragen und Stolpersteine, die die Anwendung des TDD zur Folge hatte."
+                },
+                {
+                    "text": "BDD ist besser, TDD ist tot. Lang lebe BDD!",
+                    "korrekt": false,
+                    "warum": "TDD ist ein Prinzip aus Extreme Programming. BDD erweitert den Fokus von TDD auf das Verhalten des Systems, und fördert die Kollaboration zwischen den Disziplinen, um dieses Verhalten zu definieren, diskutieren, formalisieren und prüfen."
+                },
+                {
+                    "text": "BDD ist zwar eine Weiterentwicklung aus TDD, erweitert den Fokus dabei allerdings auf eine höhere Abstraktionsebene.",
+                    "korrekt": true,
+                    "warum": "Korrekt."
+                }
+            ]
+        },
+        {
+            "text": "BDD ist laut 'State of Agile' Reports auf dem absteigenden Ast.",
+            "bereich": "BDD",
+            "level": "mittel",
+            "antworten": [
+                {
+                    "text": "Es stagniert aktuell zwar, aber von absteigender Ast kann nicht die Rede sein.",
+                    "korrekt": true,
+                    "warum": "Korrekt."
+                },
+                {
+                    "text": "Das ist wahr.",
+                    "korrekt": false,
+                    "warum": "BDD stagniert die letzten Jahre eher, von absteigendem Ast kann aber nicht die Rede sein."
+                },
+                {
+                    "text": "BDD ist der neue Bitcoin! Die Wachstumsrate spricht für sich. Kaufen! Kaufen! Kaufen!",
+                    "korrekt": false,
+                    "warum": "BDD stagniert die letzten Jahre eher."
+                }
+            ]
+        },
+        {
+            "text": "BDD hat eine Daseinsberechtigung in allen möglichen Professionen!",
+            "bereich": "BDD",
+            "level": "schwer",
+            "antworten": [
+                {
+                    "text": "Die Prinzipien in anderen Professionen anzuwenden ist gang und gäbe. Sowohl im Bankwesen als auch in regierungsnahen Organisationen ist ein solcher Trend zu verzeichnen.",
+                    "korrekt": false,
+                    "warum": "BDD beruft sich mit allen Prinzipien und Tools sehr explizit auf die Disziplinen Software Engineering, Business Expertise und Qualitätssicherung."
+                },
+                {
+                    "text": "Darüber ist nichts zu finden.",
+                    "korrekt": true,
+                    "warum": "Korrekt."
+                },
+                {
+                    "text": "Es ist durchaus denkbar, aber in der Praxis gibt es dazu noch nicht viel Adaption.",
+                    "korrekt": false,
+                    "warum": "Es ist kaum vorstellbar, da bei BDD das Verhalten von 'etwas' im Fokus steht. Zusätzlich sind die Disziplinen sehr konkret benannt: Software Engineering, Business Expertise und Qualitätssicherung."
+                }
+            ]
+        }
+    ]
+}
